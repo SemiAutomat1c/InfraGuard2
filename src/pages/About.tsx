@@ -1,13 +1,6 @@
 import { motion } from 'framer-motion'
 import { ShieldCheckIcon, UserGroupIcon, ChartBarIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
 
-const stats = [
-  { id: 1, name: 'Years of Experience', value: '10+' },
-  { id: 2, name: 'Trained Personnel', value: '100+' },
-  { id: 3, name: 'Satisfied Clients', value: '500+' },
-  { id: 4, name: 'Locations Secured', value: '1000+' },
-]
-
 const values = [
   {
     name: 'Professional Excellence',
