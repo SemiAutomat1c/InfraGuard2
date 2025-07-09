@@ -6,6 +6,7 @@ import {
   DocumentTextIcon,
   ShieldExclamationIcon 
 } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 import CTASection from '../../components/CTASection'
 
 const services = [
@@ -57,6 +58,13 @@ export default function Financial() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex items-center gap-x-4 text-xs mb-4">
+              <Link to="/industries" className="text-primary-700 hover:text-primary-600">
+                Industries
+              </Link>
+              <span className="text-gray-500">/</span>
+              <span className="text-gray-500">Financial Services</span>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Financial Services Security</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Comprehensive security solutions designed specifically for banks, credit unions, and financial institutions.

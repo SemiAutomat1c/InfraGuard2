@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { BuildingOfficeIcon, ShieldCheckIcon, LockClosedIcon, CameraIcon, ServerIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
 import CTASection from '../../components/CTASection'
 
 const services = [
@@ -51,6 +52,13 @@ export default function Industrial() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex items-center gap-x-4 text-xs mb-4">
+              <Link to="/industries" className="text-primary-700 hover:text-primary-600">
+                Industries
+              </Link>
+              <span className="text-gray-500">/</span>
+              <span className="text-gray-500">Industrial Zones</span>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Industrial Zone Security</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Comprehensive security solutions designed for manufacturing plants, factories, and industrial facilities.
