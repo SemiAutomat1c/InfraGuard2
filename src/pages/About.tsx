@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { ShieldCheckIcon, UserGroupIcon, ChartBarIcon, BuildingOfficeIcon } from '@heroicons/react/24/outline'
+import CTASection from '../components/CTASection'
 
 const values = [
   {
@@ -134,27 +135,7 @@ export default function About() {
       </div>
 
       {/* CTA section */}
-      <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Ready to enhance your security?
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-            Contact us today to discuss how we can help protect your business with our comprehensive security solutions.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <a
-              href="/contact"
-              className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
-            >
-              Contact Us
-            </a>
-            <a href="/services" className="text-sm font-semibold leading-6 text-gray-700">
-              View Our Services <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      </div>
+      <CTASection />
     </div>
   )
 } 

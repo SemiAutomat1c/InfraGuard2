@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
+import { useCallback } from 'react'
 
 const navigation = {
   solutions: [
@@ -43,6 +44,28 @@ const navigation = {
 }
 
 export default function Footer() {
+  const location = useLocation()
+  
+  // Helper function for navigation
+  const handleNavigation = useCallback((e: React.MouseEvent<HTMLAnchorElement>, path: string) => {
+    // If we're already on the same page, prevent default and manually scroll to top
+    if (location.pathname === path.split('#')[0]) {
+      // If there's a hash, scroll to that element
+      if (path.includes('#')) {
+        e.preventDefault()
+        const hash = path.split('#')[1]
+        const element = document.getElementById(hash)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      } else {
+        // Otherwise scroll to top
+        e.preventDefault()
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
+    }
+  }, [location.pathname])
+
   return (
     <footer className="bg-primary-900" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
@@ -51,7 +74,11 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link to="/" className="text-2xl font-bold text-white">
+            <Link 
+              to="/" 
+              className="text-2xl font-bold text-white"
+              onClick={(e) => handleNavigation(e, '/')}
+            >
               InfraGuard
             </Link>
             <p className="text-sm leading-6 text-gray-300">
@@ -73,7 +100,11 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link 
+                        to={item.href} 
+                        className="text-sm leading-6 text-gray-300 hover:text-white"
+                        onClick={(e) => handleNavigation(e, item.href)}
+                      >
                         {item.name}
                       </Link>
                     </li>
@@ -85,7 +116,11 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link 
+                        to={item.href} 
+                        className="text-sm leading-6 text-gray-300 hover:text-white"
+                        onClick={(e) => handleNavigation(e, item.href)}
+                      >
                         {item.name}
                       </Link>
                     </li>
@@ -99,7 +134,11 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-sm leading-6 text-gray-300 hover:text-white">
+                      <Link 
+                        to={item.href} 
+                        className="text-sm leading-6 text-gray-300 hover:text-white"
+                        onClick={(e) => handleNavigation(e, item.href)}
+                      >
                         {item.name}
                       </Link>
                     </li>

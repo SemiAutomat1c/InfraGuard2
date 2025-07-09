@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, useAnimation, useInView } from 'framer-motion'
 import { ShieldCheckIcon, LockClosedIcon, BuildingOfficeIcon, ServerIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
+import CTASection from '../components/CTASection'
 
 const heroSlides = [
   {
@@ -29,25 +30,25 @@ const features = [
     name: 'Infrastructure Guarding',
     description: 'Professional on-site security personnel protecting your physical assets 24/7.',
     icon: BuildingOfficeIcon,
-    link: '/services#physical',
+    link: '/services/infrastructure-guarding',
   },
   {
     name: 'Construction Site Security',
     description: 'Specialized security solutions for active and inactive construction projects.',
     icon: ShieldCheckIcon,
-    link: '/services#physical',
+    link: '/services/construction-site-security',
   },
   {
     name: 'Network Security',
     description: 'Comprehensive protection for your digital infrastructure and data.',
     icon: ServerIcon,
-    link: '/services#cyber',
+    link: '/services/network-security',
   },
   {
     name: 'Access Control',
     description: 'Advanced systems for managing and monitoring facility access.',
     icon: LockClosedIcon,
-    link: '/services#physical',
+    link: '/services/access-control',
   },
 ]
 
@@ -90,6 +91,37 @@ const stats = [
   { name: 'Satisfied Clients', value: '100+' },
   { name: 'Security Personnel', value: '50+' },
   { name: 'Success Rate', value: '99.9%' },
+]
+
+const partners = [
+  {
+    name: 'Qantas',
+    logo: '/images/partners/qantas.svg',
+  },
+  {
+    name: 'Nordex',
+    logo: '/images/partners/nordex.svg',
+  },
+  {
+    name: 'Nokia',
+    logo: '/images/partners/nokia.svg',
+  },
+  {
+    name: 'CID Group',
+    logo: '/images/partners/cid.svg',
+  },
+  {
+    name: 'Verizon',
+    logo: '/images/partners/verizon.svg',
+  },
+  {
+    name: 'SAP',
+    logo: '/images/partners/sap.svg',
+  },
+  {
+    name: 'Bosch',
+    logo: '/images/partners/bosch.svg',
+  },
 ]
 
 export default function Home() {
@@ -256,26 +288,29 @@ export default function Home() {
               {features.map((feature) => (
                 <motion.div
                   key={feature.name}
-                  className="flex flex-col"
+                  className="flex flex-col bg-primary-800/30 rounded-lg p-6 hover:bg-primary-800/50 transition-all cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
+                  whileHover={{ y: -5 }}
                 >
-                  <dt className="text-base font-semibold leading-7 text-white">
-                    <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-primary-700">
-                      <feature.icon className="h-6 w-6 text-white" aria-hidden="true" />
-                    </div>
-                    {feature.name}
-                  </dt>
-                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
-                    <p className="flex-auto">{feature.description}</p>
-                    <p className="mt-6">
-                      <Link to={feature.link} className="text-sm font-semibold leading-6 text-gray-300 hover:text-white">
-                        Learn more <span aria-hidden="true">→</span>
-                      </Link>
-                    </p>
-                  </dd>
+                  <Link to={feature.link} className="flex flex-col h-full">
+                    <dt className="flex items-center justify-center text-base font-semibold leading-7 text-white">
+                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary-700/50">
+                        <feature.icon className="h-8 w-8 text-white" aria-hidden="true" />
+                      </div>
+                    </dt>
+                    <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-center">
+                      <h3 className="text-xl font-semibold text-white mb-2">{feature.name}</h3>
+                      <p className="flex-auto text-gray-300 mb-4">{feature.description}</p>
+                      <p className="mt-auto">
+                        <span className="text-sm font-semibold leading-6 text-gray-300 hover:text-white">
+                          Learn more <span aria-hidden="true">→</span>
+                        </span>
+                      </p>
+                    </dd>
+                  </Link>
                 </motion.div>
               ))}
             </dl>
@@ -346,39 +381,53 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CTA section */}
-      <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
-        <div className="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl">
-          <div
-            className="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-primary-800 to-primary-600 opacity-25"
-            style={{
-              clipPath:
-                'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-            }}
-          />
-        </div>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Ready to secure your business?
-            <br />
-            Start with InfraGuard today.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-            Contact us now to discuss your security needs and get a customized solution for your business.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              to="/contact"
-              className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
-            >
-              Get Started
-            </Link>
-            <Link to="/services" className="text-sm font-semibold leading-6 text-gray-700">
-              Learn More <span aria-hidden="true">→</span>
-            </Link>
+      {/* Partners section */}
+      <div className="bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:max-w-none">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                Our Partners
+              </h2>
+              <div className="mx-auto mt-4 h-1 w-24 bg-primary-600"></div>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                We collaborate with industry leaders to deliver the best security solutions
+              </p>
+            </div>
+            <div className="relative mt-16">
+              {/* Gradient masks for smooth edges */}
+              <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-transparent z-10"></div>
+              <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-transparent z-10"></div>
+              
+              {/* Marquee container */}
+              <div className="overflow-hidden relative w-full">
+                <div className="flex animate-marquee items-center space-x-16 py-8">
+                  {[...partners, ...partners, ...partners].map((partner, index) => (
+                    <div
+                      key={index}
+                      className="flex h-24 w-40 flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
+                    >
+                      <img
+                        src={partner.logo}
+                        alt={partner.name}
+                        className="h-12 w-auto object-contain"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* CTA section */}
+      <CTASection 
+        title="Ready to secure your business?"
+        description="Contact us now to discuss your security needs and get a customized solution for your business."
+        primaryButtonText="Get Started"
+        secondaryButtonText="Learn More"
+      />
     </div>
   )
 } 
