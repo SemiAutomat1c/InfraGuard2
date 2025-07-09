@@ -78,12 +78,38 @@ const testimonials = [
     text: "InfraGuard's integrated security approach has transformed how we protect our assets. Their professional team and cutting-edge solutions provide peace of mind.",
     author: "Sarah Chen",
     role: "Operations Director, TechCorp Industries",
+    image: "/images/testimonials/sarah-chen.jpg"
   },
   {
     text: "The combination of physical and cyber security services from InfraGuard has significantly enhanced our security posture. Their team's expertise is unmatched.",
     author: "Michael Roberts",
     role: "CEO, Construction Solutions",
+    image: "/images/testimonials/michael-roberts.jpg"
   },
+  {
+    text: "We've seen a dramatic reduction in security incidents since implementing InfraGuard's solutions. Their comprehensive approach addresses all our concerns.",
+    author: "Jennifer Patel",
+    role: "Security Director, Global Logistics",
+    image: "/images/testimonials/jennifer-lee.jpg"
+  },
+  {
+    text: "The peace of mind that comes with knowing our facilities are protected 24/7 is invaluable. InfraGuard delivers on their promises consistently.",
+    author: "David Wilson",
+    role: "Facility Manager, Nordex Manufacturing",
+    image: "/images/testimonials/david-wilson.jpg"
+  },
+  {
+    text: "InfraGuard's cybersecurity team detected and prevented a potential breach that could have cost us millions. Their proactive approach is worth every penny.",
+    author: "Maria Garcia",
+    role: "CTO, Financial Services Inc.",
+    image: "/images/testimonials/maria-garcia.jpg"
+  },
+  {
+    text: "The seamless integration between physical security personnel and digital systems gives us complete visibility and control over our security operations.",
+    author: "Thomas Brown",
+    role: "Operations VP, Tech Innovations",
+    image: "/images/testimonials/thomas-brown.jpg"
+  }
 ]
 
 const stats = [
@@ -126,12 +152,22 @@ const partners = [
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentTestimonialSlide, setCurrentTestimonialSlide] = useState(0);
   
   // Auto-advance carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  // Auto-advance testimonials carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonialSlide((prev) => (prev + 1) % 6); // 6 slides total
+    }, 8000);
     
     return () => clearInterval(interval);
   }, []);
@@ -142,6 +178,14 @@ export default function Home() {
   
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
+  const nextTestimonialSlide = () => {
+    setCurrentTestimonialSlide((prev) => (prev + 1) % 6);
+  };
+  
+  const prevTestimonialSlide = () => {
+    setCurrentTestimonialSlide((prev) => (prev - 1 + 6) % 6);
   };
 
   return (
@@ -328,27 +372,129 @@ export default function Home() {
             Hear from our clients about how InfraGuard has transformed their security operations.
           </p>
         </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          {testimonials.map((testimonial, index) => (
-            <motion.figure
-              key={index}
-              className="glass-effect rounded-2xl p-8"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-            >
-              <blockquote className="text-gray-900">
-                <p>{`"${testimonial.text}"`}</p>
-              </blockquote>
-              <figcaption className="mt-6 flex items-center gap-x-4">
-                <div>
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-gray-600">{testimonial.role}</div>
+        
+        <div className="relative mt-16">
+          {/* Arrow Controls - Left */}
+          <button
+            onClick={prevTestimonialSlide}
+            className="absolute -left-12 top-1/2 z-20 -translate-y-1/2 rounded-full bg-primary-700/30 p-3 text-white hover:bg-primary-700/50 hidden lg:block"
+            aria-label="Previous testimonial slide"
+          >
+            <ChevronLeftIcon className="h-6 w-6" />
+          </button>
+
+          {/* Testimonial slides */}
+          <div className="overflow-hidden pb-16">
+            {[0, 1, 2, 3, 4, 5].map((slideIndex) => (
+              <div 
+                key={slideIndex}
+                className={`transition-all duration-700 ease-in-out ${
+                  currentTestimonialSlide === slideIndex ? 'opacity-100' : 'opacity-0 absolute top-0 left-0'
+                }`}
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-16">
+                  {/* Left column: Image */}
+                  <div className="flex items-center justify-center">
+                    <motion.div
+                      className="rounded-2xl overflow-hidden shadow-lg w-full"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={currentTestimonialSlide === slideIndex ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                      transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                      <div className="relative h-80">
+                        <div className="absolute inset-0 bg-primary-700/10 flex items-center justify-center">
+                          <span className="text-xl font-semibold text-primary-700">
+                            {slideIndex % 2 === 0 ? 'Security services' : 'Security solutions'}
+                          </span>
+                        </div>
+                        <img 
+                          src={slideIndex % 3 === 0 ? "/images/security-team.jpg" : 
+                               slideIndex % 3 === 1 ? "/images/cyber-security.jpg" : 
+                               "/images/security-monitoring.jpg"} 
+                          alt={slideIndex % 2 === 0 ? "Security services" : "Security solutions"}
+                          className="h-full w-full object-cover opacity-90"
+                          onError={(e) => {
+                            e.currentTarget.src = 'https://via.placeholder.com/800x600?text=Security';
+                          }}
+                        />
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Right column: Testimonial */}
+                  <div className="flex items-center">
+                    <motion.figure
+                      className="glass-effect rounded-2xl p-8 w-full"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={currentTestimonialSlide === slideIndex ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                    >
+                      <blockquote className="text-gray-900">
+                        <p className="text-lg">{`"${testimonials[slideIndex].text}"`}</p>
+                      </blockquote>
+                      <figcaption className="mt-6 flex items-center gap-x-4">
+                        <div className="h-12 w-12 rounded-full overflow-hidden bg-gray-200">
+                          <img 
+                            src={testimonials[slideIndex].image} 
+                            alt={testimonials[slideIndex].author}
+                            className="h-full w-full object-cover"
+                            onError={(e) => {
+                              e.currentTarget.src = 'https://via.placeholder.com/150';
+                            }}
+                          />
+                        </div>
+                        <div>
+                          <div className="font-semibold">{testimonials[slideIndex].author}</div>
+                          <div className="text-gray-600">{testimonials[slideIndex].role}</div>
+                        </div>
+                      </figcaption>
+                    </motion.figure>
+                  </div>
                 </div>
-              </figcaption>
-            </motion.figure>
-          ))}
+              </div>
+            ))}
+          </div>
+          
+          {/* Arrow Controls - Right */}
+          <button
+            onClick={nextTestimonialSlide}
+            className="absolute -right-12 top-1/2 z-20 -translate-y-1/2 rounded-full bg-primary-700/30 p-3 text-white hover:bg-primary-700/50 hidden lg:block"
+            aria-label="Next testimonial slide"
+          >
+            <ChevronRightIcon className="h-6 w-6" />
+          </button>
+
+          {/* Mobile Arrow Controls (visible only on small screens) */}
+          <div className="flex justify-between lg:hidden absolute top-1/2 -translate-y-1/2 left-0 right-0 z-20 px-2">
+            <button
+              onClick={prevTestimonialSlide}
+              className="rounded-full bg-primary-700/30 p-2 text-white hover:bg-primary-700/50"
+              aria-label="Previous testimonial slide"
+            >
+              <ChevronLeftIcon className="h-5 w-5" />
+            </button>
+            <button
+              onClick={nextTestimonialSlide}
+              className="rounded-full bg-primary-700/30 p-2 text-white hover:bg-primary-700/50"
+              aria-label="Next testimonial slide"
+            >
+              <ChevronRightIcon className="h-5 w-5" />
+            </button>
+          </div>
+          
+          {/* Carousel Controls */}
+          <div className="absolute -bottom-10 left-0 right-0 z-20 flex justify-center space-x-2">
+            {[0, 1, 2, 3, 4, 5].map((index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentTestimonialSlide(index)}
+                className={`h-2 w-8 rounded-full ${
+                  currentTestimonialSlide === index ? 'bg-primary-700' : 'bg-gray-300'
+                }`}
+                aria-label={`Go to testimonial slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
 
