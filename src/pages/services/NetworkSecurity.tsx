@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ServerIcon, ShieldCheckIcon, LockClosedIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
+import { ServerIcon, ShieldCheckIcon, DocumentTextIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
@@ -16,7 +16,7 @@ const features = [
   {
     name: 'Security Maintenance',
     description: 'Regular updates and maintenance to keep your security systems effective against new threats.',
-    icon: WrenchScrewdriverIcon,
+    icon: DocumentTextIcon,
   },
 ]
 

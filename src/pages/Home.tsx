@@ -1,6 +1,6 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useAnimation, useInView } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { ShieldCheckIcon, LockClosedIcon, BuildingOfficeIcon, ServerIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import CTASection from '../components/CTASection'
 

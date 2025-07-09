@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
 import { BuildingOfficeIcon, ShieldCheckIcon, LockClosedIcon, CameraIcon } from '@heroicons/react/24/outline'
 import CTASection from '../../components/CTASection'
 

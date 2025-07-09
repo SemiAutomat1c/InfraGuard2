@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { LockClosedIcon, FingerPrintIcon, KeyIcon, DocumentCheckIcon } from '@heroicons/react/24/outline'
+import { FingerPrintIcon, KeyIcon, DeviceTabletIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
@@ -16,7 +16,7 @@ const features = [
   {
     name: 'Visitor Management',
     description: 'Comprehensive tracking and verification of all visitors to your facility.',
-    icon: DocumentCheckIcon,
+    icon: DeviceTabletIcon,
   },
 ]
 

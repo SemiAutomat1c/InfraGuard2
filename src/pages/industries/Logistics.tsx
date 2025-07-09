@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
-import { Link } from 'react-router-dom'
-import { TruckIcon, ShieldCheckIcon, LockClosedIcon, CameraIcon, ClockIcon } from '@heroicons/react/24/outline'
+import { ShieldCheckIcon, LockClosedIcon, CameraIcon, ClockIcon } from '@heroicons/react/24/outline'
 import CTASection from '../../components/CTASection'
 
 const services = [

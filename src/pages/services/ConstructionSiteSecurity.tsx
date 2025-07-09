@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { ShieldCheckIcon, VideoCameraIcon, EyeIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { VideoCameraIcon, EyeIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {

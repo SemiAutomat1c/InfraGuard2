@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { BuildingOfficeIcon, UserGroupIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline'
+import { ShieldCheckIcon, UserGroupIcon, ClockIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
