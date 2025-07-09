@@ -344,7 +344,7 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              {industries.map((industry, index) => (
+              {industries.map((industry) => (
                 <motion.div
                   key={industry.name}
                   whileHover={{ y: -5 }}

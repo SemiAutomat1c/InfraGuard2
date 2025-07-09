@@ -1,4 +1,4 @@
-import type { Variants, Easing, EasingDefinition } from 'framer-motion';
+import type { Variants, EasingDefinition } from 'framer-motion';
 
 // Animation durations
 export const durations = {
