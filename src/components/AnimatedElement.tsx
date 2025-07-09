@@ -1,60 +1,82 @@
-import { motion } from 'framer-motion';
+import React from 'react';
 import type { ReactNode } from 'react';
-import { fadeUp, fadeDown, fadeLeft, fadeRight, scaleUp, fadeIn } from '../utils/animations';
+import { motion } from 'framer-motion';
 
-type AnimationType = 'fadeUp' | 'fadeDown' | 'fadeLeft' | 'fadeRight' | 'scaleUp' | 'fadeIn';
-
-interface AnimatedElementProps {
+export interface AnimatedElementProps {
   children: ReactNode;
-  type?: AnimationType;
+  type?: 'fadeUp' | 'fadeIn' | 'fadeLeft' | 'fadeRight' | 'scale' | 'bounce';
   className?: string;
   delay?: number;
   duration?: number;
-  as?: React.ElementType;
 }
 
-const getAnimationVariant = (type: AnimationType) => {
-  switch (type) {
-    case 'fadeUp':
-      return fadeUp;
-    case 'fadeDown':
-      return fadeDown;
-    case 'fadeLeft':
-      return fadeLeft;
-    case 'fadeRight':
-      return fadeRight;
-    case 'scaleUp':
-      return scaleUp;
-    case 'fadeIn':
-    default:
-      return fadeIn;
-  }
-};
-
-const AnimatedElement = ({
+const AnimatedElement: React.FC<AnimatedElementProps> = ({
   children,
   type = 'fadeUp',
   className = '',
   delay = 0,
-  duration,
-  as = 'div'
-}: AnimatedElementProps) => {
-  const MotionComponent = motion[as as keyof typeof motion];
-  
+  duration = 0.5
+}) => {
+  const getAnimationProps = () => {
+    switch (type) {
+      case 'fadeUp':
+        return {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration, delay }
+        };
+      case 'fadeIn':
+        return {
+          initial: { opacity: 0 },
+          whileInView: { opacity: 1 },
+          transition: { duration, delay }
+        };
+      case 'fadeLeft':
+        return {
+          initial: { opacity: 0, x: -20 },
+          whileInView: { opacity: 1, x: 0 },
+          transition: { duration, delay }
+        };
+      case 'fadeRight':
+        return {
+          initial: { opacity: 0, x: 20 },
+          whileInView: { opacity: 1, x: 0 },
+          transition: { duration, delay }
+        };
+      case 'scale':
+        return {
+          initial: { opacity: 0, scale: 0.8 },
+          whileInView: { opacity: 1, scale: 1 },
+          transition: { duration, delay }
+        };
+      case 'bounce':
+        return {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { 
+            type: "spring",
+            stiffness: 300,
+            damping: 15,
+            delay 
+          }
+        };
+      default:
+        return {
+          initial: { opacity: 0, y: 20 },
+          whileInView: { opacity: 1, y: 0 },
+          transition: { duration, delay }
+        };
+    }
+  };
+
   return (
-    <MotionComponent
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-50px' }}
-      variants={getAnimationVariant(type)}
-      transition={{ 
-        delay, 
-        ...(duration ? { duration } : {})
-      }}
+    <motion.div
       className={className}
+      viewport={{ once: true, margin: '-50px' }}
+      {...getAnimationProps()}
     >
       {children}
-    </MotionComponent>
+    </motion.div>
   );
 };
 

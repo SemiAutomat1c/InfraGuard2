@@ -1,22 +1,25 @@
-import { motion } from 'framer-motion';
+import React from 'react';
 import type { ReactNode } from 'react';
-import { revealSection } from '../utils/animations';
+import { motion } from 'framer-motion';
 
-interface AnimatedSectionProps {
+export interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
 }
 
-const AnimatedSection = ({ children, className = '', delay = 0 }: AnimatedSectionProps) => {
+const AnimatedSection: React.FC<AnimatedSectionProps> = ({ 
+  children, 
+  className = '',
+  delay = 0
+}) => {
   return (
     <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-100px' }}
-      variants={revealSection}
-      transition={{ delay }}
       className={className}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-100px' }}
+      transition={{ duration: 0.8, delay }}
     >
       {children}
     </motion.section>

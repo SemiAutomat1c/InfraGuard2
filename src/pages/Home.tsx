@@ -5,6 +5,10 @@ import { ShieldCheckIcon, LockClosedIcon, BuildingOfficeIcon, ServerIcon, Chevro
 import CTASection from '../components/CTASection'
 import AnimatedSection from '../components/AnimatedSection'
 import AnimatedElement from '../components/AnimatedElement'
+import SectionDivider from '../components/SectionDivider'
+import AnimatedCounter from '../components/AnimatedCounter'
+import FloatingBadge from '../components/FloatingBadge'
+import WhyChooseUs from '../components/WhyChooseUs'
 import { staggerContainer, staggerItem, cardHover } from '../utils/animations'
 
 const heroSlides = [
@@ -59,19 +63,25 @@ const latestNews = [
   {
     title: 'Enhanced Security Solutions',
     description: 'Introducing our latest integrated security systems for modern businesses.',
-    image: '/images/news1.jpg',
+    image: '/images/news/enhanced-security.jpg',
+    fallbackImage: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070',
+    date: 'March 2024',
     link: '/services',
   },
   {
     title: 'Industry Recognition',
     description: 'InfraGuard named top security provider in the region.',
-    image: '/images/news2.jpg',
+    image: '/images/news/industry-recognition.jpg',
+    fallbackImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070',
+    date: 'March 2024',
     link: '/about',
   },
   {
     title: 'Security Best Practices',
     description: 'Latest guidelines for protecting your business assets.',
-    image: '/images/news3.jpg',
+    image: '/images/news/security-best-practices.jpg',
+    fallbackImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070',
+    date: 'March 2024',
     link: '/services',
   },
 ]
@@ -81,37 +91,55 @@ const testimonials = [
     text: "InfraGuard's integrated security approach has transformed how we protect our assets. Their professional team and cutting-edge solutions provide peace of mind.",
     author: "Sarah Chen",
     role: "Operations Director, TechCorp Industries",
-    image: "/images/testimonials/sarah-chen.jpg"
+    image: "/images/testimonials/sarah-chen.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976",
+    serviceImage: "/images/testimonials/security-service-1.jpg",
+    serviceFallbackImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070"
   },
   {
     text: "The combination of physical and cyber security services from InfraGuard has significantly enhanced our security posture. Their team's expertise is unmatched.",
     author: "Michael Roberts",
     role: "CEO, Construction Solutions",
-    image: "/images/testimonials/michael-roberts.jpg"
+    image: "/images/testimonials/michael-roberts.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974",
+    serviceImage: "/images/testimonials/security-service-2.jpg",
+    serviceFallbackImage: "https://images.unsplash.com/photo-1581092921461-eab10887abef?q=80&w=2070"
   },
   {
     text: "We've seen a dramatic reduction in security incidents since implementing InfraGuard's solutions. Their comprehensive approach addresses all our concerns.",
     author: "Jennifer Patel",
     role: "Security Director, Global Logistics",
-    image: "/images/testimonials/jennifer-lee.jpg"
+    image: "/images/testimonials/jennifer-lee.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961",
+    serviceImage: "/images/testimonials/security-service-3.jpg",
+    serviceFallbackImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072"
   },
   {
     text: "The peace of mind that comes with knowing our facilities are protected 24/7 is invaluable. InfraGuard delivers on their promises consistently.",
     author: "David Wilson",
     role: "Facility Manager, Nordex Manufacturing",
-    image: "/images/testimonials/david-wilson.jpg"
+    image: "/images/testimonials/david-wilson.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070",
+    serviceImage: "/images/testimonials/security-service-4.jpg",
+    serviceFallbackImage: "https://images.unsplash.com/photo-1594058573823-d8edf1ad3380?q=80&w=2071"
   },
   {
     text: "InfraGuard's cybersecurity team detected and prevented a potential breach that could have cost us millions. Their proactive approach is worth every penny.",
     author: "Maria Garcia",
     role: "CTO, Financial Services Inc.",
-    image: "/images/testimonials/maria-garcia.jpg"
+    image: "/images/testimonials/maria-garcia.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974",
+    serviceImage: "/images/testimonials/security-service-5.jpg",
+    serviceFallbackImage: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069"
   },
   {
     text: "The seamless integration between physical security personnel and digital systems gives us complete visibility and control over our security operations.",
     author: "Thomas Brown",
     role: "Operations VP, Tech Innovations",
-    image: "/images/testimonials/thomas-brown.jpg"
+    image: "/images/testimonials/thomas-brown.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974",
+    serviceImage: "/images/testimonials/security-service-6.jpg",
+    serviceFallbackImage: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=2080"
   }
 ]
 
@@ -125,31 +153,31 @@ const stats = [
 const partners = [
   {
     name: 'Qantas',
-    logo: '/images/partners/qantas.svg',
+    logo: '/images/partners/Qantas-Logo.wine.png',
   },
   {
     name: 'Nordex',
-    logo: '/images/partners/nordex.svg',
+    logo: '/images/partners/Nordex-Logo.wine.png',
   },
   {
     name: 'Nokia',
-    logo: '/images/partners/nokia.svg',
+    logo: '/images/partners/Nokia-Logo.wine.png',
   },
   {
     name: 'CID Group',
-    logo: '/images/partners/cid.svg',
+    logo: '/images/partners/CID-Group-white-logo.png',
   },
   {
     name: 'Verizon',
-    logo: '/images/partners/verizon.svg',
+    logo: '/images/partners/Verizon_Communications-Logo.wine.png',
   },
   {
     name: 'SAP',
-    logo: '/images/partners/sap.svg',
+    logo: '/images/partners/SAP_SE-Logo.wine.png',
   },
   {
     name: 'Bosch',
-    logo: '/images/partners/bosch.svg',
+    logo: '/images/partners/Robert_Bosch_GmbH-Logo.wine.png',
   },
 ]
 
@@ -237,6 +265,18 @@ export default function Home() {
                 </div>
               </motion.div>
             </div>
+            
+            {/* Add floating badges to hero section */}
+            <FloatingBadge 
+              text="ISO 27001 Certified" 
+              className="top-1/4 right-[15%]"
+              delay={0.5}
+            />
+            <FloatingBadge 
+              text="24/7 Monitoring" 
+              className="bottom-1/4 left-[15%]"
+              delay={1.2}
+            />
           </div>
         ))}
         
@@ -269,10 +309,15 @@ export default function Home() {
         >
           <ChevronRightIcon className="h-6 w-6" />
         </button>
+        
+        {/* Add wave divider at bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <SectionDivider type="wave" color="text-white" />
+        </div>
       </div>
 
       {/* Latest News section */}
-      <AnimatedSection className="bg-gradient-tech mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 rounded-xl shadow-lg my-12">
+      <AnimatedSection className="bg-gradient-tech mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 rounded-xl shadow-lg my-12 relative">
         <AnimatedElement type="fadeUp">
           <div className="mx-auto max-w-2xl lg:mx-0">
             <h2 className="text-base font-semibold leading-7 text-primary-700">Latest Updates</h2>
@@ -292,35 +337,44 @@ export default function Home() {
           {latestNews.map((item, index) => (
             <motion.article
               key={item.title}
-              className="flex flex-col items-start card-shadow bg-white rounded-xl overflow-hidden"
+              className="flex flex-col items-start card-shadow bg-white rounded-xl overflow-hidden h-full"
               variants={staggerItem}
               whileHover="hover"
               initial="initial"
               animate="initial"
               custom={index}
             >
-              <motion.div variants={cardHover} className="h-full w-full">
+              <motion.div variants={cardHover} className="h-full w-full flex flex-col">
                 <div className="relative w-full">
                   <img
                     src={item.image}
-                    alt=""
+                    alt={item.title}
                     className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                    onError={(e) => {
+                      e.currentTarget.src = item.fallbackImage;
+                    }}
                   />
                 </div>
-                <div className="p-6 w-full">
+                <div className="p-6 flex-grow flex flex-col">
                   <div className="flex items-center gap-x-4 text-xs">
                     <time dateTime="2024-03" className="text-gray-500">
-                      March 2024
+                      {item.date}
                     </time>
                   </div>
-                  <div className="group relative">
+                  <div className="group relative flex-grow flex flex-col">
                     <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                       <Link to={item.link}>
                         <span className="absolute inset-0" />
                         {item.title}
                       </Link>
                     </h3>
-                    <p className="mt-5 text-sm leading-6 text-gray-600">{item.description}</p>
+                    <p className="mt-5 text-sm leading-6 text-gray-600 flex-grow">{item.description}</p>
+                    <div className="mt-4 flex items-center text-primary-700 text-sm font-medium">
+                      Read more
+                      <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -328,6 +382,21 @@ export default function Home() {
           ))}
         </motion.div>
       </AnimatedSection>
+
+      {/* Add section divider */}
+      <div className="relative">
+        <SectionDivider type="angle" color="text-primary-50" />
+      </div>
+
+      {/* Why Choose Us section */}
+      <AnimatedSection className="bg-white">
+        <WhyChooseUs />
+      </AnimatedSection>
+
+      {/* Add section divider */}
+      <div className="relative">
+        <SectionDivider type="curve" color="text-primary-50" flip={true} />
+      </div>
 
       {/* Features section */}
       <AnimatedSection className="bg-circuit py-24 sm:py-32 relative">
@@ -380,6 +449,11 @@ export default function Home() {
             </dl>
           </motion.div>
         </div>
+        
+        {/* Add section divider */}
+        <div className="absolute bottom-0 left-0 right-0">
+          <SectionDivider type="curve" color="text-white" />
+        </div>
       </AnimatedSection>
 
       {/* Testimonials section */}
@@ -424,19 +498,25 @@ export default function Home() {
                       transition={{ duration: 0.5, delay: 0.3 }}
                     >
                       <div className="relative h-80">
-                        <div className="absolute inset-0 bg-primary-700/10 flex items-center justify-center">
-                          <span className="text-xl font-semibold text-primary-700">
-                            {slideIndex % 2 === 0 ? 'Security services' : 'Security solutions'}
-                          </span>
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent z-10 flex items-end justify-start p-6">
+                          <div className="flex items-center gap-x-2">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white">
+                              {slideIndex % 2 === 0 ? 
+                                <ShieldCheckIcon className="h-5 w-5" /> : 
+                                <LockClosedIcon className="h-5 w-5" />
+                              }
+                            </div>
+                            <span className="text-xl font-semibold text-white">
+                              {slideIndex % 2 === 0 ? 'Security services' : 'Security solutions'}
+                            </span>
+                          </div>
                         </div>
                         <img 
-                          src={slideIndex % 3 === 0 ? "/images/security-team.jpg" : 
-                               slideIndex % 3 === 1 ? "/images/cyber-security.jpg" : 
-                               "/images/security-monitoring.jpg"} 
+                          src={testimonials[slideIndex].serviceImage} 
                           alt={slideIndex % 2 === 0 ? "Security services" : "Security solutions"}
-                          className="h-full w-full object-cover opacity-90"
+                          className="h-full w-full object-cover"
                           onError={(e) => {
-                            e.currentTarget.src = 'https://via.placeholder.com/800x600?text=Security';
+                            e.currentTarget.src = testimonials[slideIndex].serviceFallbackImage;
                           }}
                         />
                       </div>
@@ -461,7 +541,7 @@ export default function Home() {
                             alt={testimonials[slideIndex].author}
                             className="h-full w-full object-cover"
                             onError={(e) => {
-                              e.currentTarget.src = 'https://via.placeholder.com/150';
+                              e.currentTarget.src = testimonials[slideIndex].fallbackImage;
                             }}
                           />
                         </div>
@@ -520,6 +600,11 @@ export default function Home() {
         </div>
       </AnimatedSection>
 
+      {/* Add section divider */}
+      <div className="relative my-8">
+        <SectionDivider type="triangle" color="text-primary-50" />
+      </div>
+
       {/* Stats */}
       <AnimatedSection className="bg-gradient-blue mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8 rounded-xl shadow-lg">
         <div className="mx-auto max-w-2xl lg:max-w-none py-12">
@@ -547,12 +632,19 @@ export default function Home() {
                 custom={index}
               >
                 <dt className="text-sm font-semibold leading-6 text-gray-600">{stat.name}</dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
+                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">
+                  <AnimatedCounter value={stat.value} className="text-3xl font-semibold" />
+                </dd>
               </motion.div>
             ))}
           </motion.dl>
         </div>
       </AnimatedSection>
+
+      {/* Add section divider */}
+      <div className="relative my-8">
+        <SectionDivider type="zigzag" color="text-white" />
+      </div>
 
       {/* Partners section */}
       <AnimatedSection className="bg-dots py-24 sm:py-32">
@@ -567,33 +659,57 @@ export default function Home() {
                 We collaborate with industry leaders to deliver the best security solutions
               </p>
             </AnimatedElement>
+          </div>
+        </div>
             
-            <AnimatedElement type="fadeUp" delay={0.2} className="relative mt-16 glass-effect rounded-xl p-4">
-              {/* Gradient masks for smooth edges */}
-              <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-transparent z-10"></div>
-              <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-transparent z-10"></div>
-              
-              {/* Marquee container */}
-              <div className="overflow-hidden relative w-full">
-                <div className="flex animate-marquee items-center space-x-16 py-8">
-                  {[...partners, ...partners, ...partners].map((partner, index) => (
-                    <div
-                      key={index}
-                      className="flex h-24 w-40 flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110"
-                    >
+        <div className="mt-16 w-full">
+          <AnimatedElement type="fadeUp" delay={0.2} className="relative glass-effect overflow-hidden">
+            {/* Marquee container */}
+            <div className="overflow-hidden relative w-full py-8">
+              <div className="flex animate-marquee items-center">
+                {[...partners, ...partners, ...partners].map((partner, index) => (
+                  <div
+                    key={`row1-${index}`}
+                    className="flex h-20 w-32 flex-shrink-0 items-center justify-center transition-all duration-300 hover:scale-110 mx-4"
+                  >
+                    <div className="bg-white p-3 rounded-lg shadow-sm w-full h-full flex items-center justify-center">
                       <img
                         src={partner.logo}
                         alt={partner.name}
-                        className="h-12 w-auto object-contain"
+                        className="h-14 w-auto object-contain"
+                        onError={(e) => {
+                          // Fallback to SVG if PNG fails to load
+                          const svgPath = partner.logo.replace('.png', '.svg');
+                          e.currentTarget.src = svgPath;
+                        }}
                       />
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-            </AnimatedElement>
-          </div>
+            </div>
+          </AnimatedElement>
         </div>
       </AnimatedSection>
+
+      {/* Add decorative elements */}
+      <div className="relative">
+        <FloatingBadge 
+          text="Trusted Security Partner" 
+          className="top-[10%] right-[5%]"
+          delay={0.8}
+        />
+        <FloatingBadge 
+          text="Australian Owned" 
+          className="bottom-[15%] left-[5%]"
+          delay={1.5}
+        />
+      </div>
+
+      {/* Add section divider */}
+      <div className="relative mt-16">
+        <SectionDivider type="wave" color="text-primary-50" />
+      </div>
 
       {/* CTA section */}
       <CTASection 
