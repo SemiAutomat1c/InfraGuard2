@@ -18,16 +18,16 @@ const physicalSecurityServices = [
     href: '/services/construction-site-security',
   },
   {
-    name: '24/7 On-Site Security',
-    href: '/services#physical',
-  },
-  {
     name: 'Access Control',
     href: '/services/access-control',
   },
   {
+    name: '24/7 On-Site Security',
+    href: '/services/24-7-on-site-security',
+  },
+  {
     name: 'Security Risk Assessment',
-    href: '/services#physical',
+    href: '/services/security-risk-assessment',
   },
 ]
 
@@ -38,23 +38,23 @@ const cyberSecurityServices = [
   },
   {
     name: 'Firewall & Intrusion Prevention',
-    href: '/services#cyber',
+    href: '/services/firewall-intrusion-prevention',
   },
   {
     name: 'Endpoint Protection',
-    href: '/services#cyber',
+    href: '/services/endpoint-protection',
   },
   {
     name: 'Email Security',
-    href: '/services#cyber',
+    href: '/services/email-security',
   },
   {
     name: 'Vulnerability Assessment',
-    href: '/services#cyber',
+    href: '/services/vulnerability-assessment',
   },
   {
     name: 'Cybersecurity Consulting',
-    href: '/services#cyber',
+    href: '/services/cybersecurity-consulting',
   },
 ]
 
