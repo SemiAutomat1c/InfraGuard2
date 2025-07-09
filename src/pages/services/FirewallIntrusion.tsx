@@ -46,6 +46,17 @@ export default function FirewallIntrusion() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex items-center gap-x-4 text-xs mb-4">
+              <Link to="/" className="text-primary-700 hover:text-primary-600">
+                Home
+              </Link>
+              <span className="text-gray-500">/</span>
+              <Link to="/services" className="text-primary-700 hover:text-primary-600">
+                Services
+              </Link>
+              <span className="text-gray-500">/</span>
+              <span className="text-gray-500">Firewall & Intrusion Prevention</span>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Firewall & Intrusion Prevention</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Protect your network from unauthorized access and malicious attacks with our advanced security solutions.

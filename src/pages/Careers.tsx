@@ -88,6 +88,13 @@ export default function Careers() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex items-center gap-x-4 text-xs mb-4">
+              <Link to="/" className="text-primary-700 hover:text-primary-600">
+                Home
+              </Link>
+              <span className="text-gray-500">/</span>
+              <span className="text-gray-500">Careers</span>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Join Our Team</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Build a rewarding career in the security industry with InfraGuard. We're looking for talented individuals

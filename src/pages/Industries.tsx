@@ -46,6 +46,13 @@ export default function Industries() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex items-center gap-x-4 text-xs mb-4">
+              <Link to="/" className="text-primary-700 hover:text-primary-600">
+                Home
+              </Link>
+              <span className="text-gray-500">/</span>
+              <span className="text-gray-500">Industries</span>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Industries We Serve</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               We serve a wide range of clients with tailored security solutions designed to address the unique challenges 

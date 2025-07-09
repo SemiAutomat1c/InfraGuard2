@@ -46,6 +46,17 @@ export default function RiskAssessment() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <div className="flex items-center gap-x-4 text-xs mb-4">
+              <Link to="/" className="text-primary-700 hover:text-primary-600">
+                Home
+              </Link>
+              <span className="text-gray-500">/</span>
+              <Link to="/services" className="text-primary-700 hover:text-primary-600">
+                Services
+              </Link>
+              <span className="text-gray-500">/</span>
+              <span className="text-gray-500">Security Risk Assessment</span>
+            </div>
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Security Risk Assessment</h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Identify vulnerabilities and develop strategic security plans with our comprehensive risk assessment services.
