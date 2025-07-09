@@ -1,1 +1,5 @@
- 
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+  <path fill="#E40000" d="M30,50 C30,39 39,30 50,30 H250 C261,30 270,39 270,50 C270,61 261,70 250,70 H50 C39,70 30,61 30,50 Z"/>
+  <path fill="white" d="M60,50 L75,35 L90,50 L75,65 Z"/>
+  <text x="100" y="55" font-family="Arial" font-weight="bold" font-size="24" fill="white">QANTAS</text>
+</svg> 
