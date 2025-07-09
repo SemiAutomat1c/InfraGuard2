@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import AnimatedButton from './AnimatedButton';
+import AnimatedElement from './AnimatedElement';
+import { fadeUp } from '../utils/animations';
 
 interface CTASectionProps {
   title?: string;
@@ -27,12 +30,9 @@ export default function CTASection({
     <div className={`w-full ${darkBackground ? 'bg-circuit' : 'bg-tech-light'}`}>
       <div className={`mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 ${darkBackground ? 'relative' : ''}`}>
         {darkBackground && <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/90"></div>}
-        <motion.div
+        <AnimatedElement
+          type="fadeUp"
           className={`mx-auto max-w-2xl text-center relative z-10 ${!darkBackground ? 'glass-effect rounded-xl p-8' : ''}`}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
           <h2 className={`text-3xl font-bold tracking-tight sm:text-4xl ${darkBackground ? 'text-white' : 'text-gray-900'}`}>
             {title}
@@ -41,24 +41,29 @@ export default function CTASection({
             {description}
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
+            <AnimatedButton
               to={primaryButtonLink}
-              className={`rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm ${
-                darkBackground 
-                  ? 'bg-white text-primary-800 hover:bg-gray-100' 
-                  : 'bg-primary-800 text-white hover:bg-primary-700'
-              } focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800`}
+              variant={darkBackground ? 'secondary' : 'primary'}
             >
               {primaryButtonText}
-            </Link>
-            <Link 
-              to={secondaryButtonLink} 
-              className={`text-sm font-semibold leading-6 ${darkBackground ? 'text-white' : 'text-gray-700'}`}
+            </AnimatedButton>
+            
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeUp}
+              transition={{ delay: 0.2 }}
             >
-              {secondaryButtonText} <span aria-hidden="true">→</span>
-            </Link>
+              <Link 
+                to={secondaryButtonLink} 
+                className={`text-sm font-semibold leading-6 ${darkBackground ? 'text-white' : 'text-gray-700'} hover:translate-x-1 transition-transform duration-300 inline-flex items-center`}
+              >
+                {secondaryButtonText} <span aria-hidden="true" className="ml-1 group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </Link>
+            </motion.div>
           </div>
-        </motion.div>
+        </AnimatedElement>
       </div>
     </div>
   );

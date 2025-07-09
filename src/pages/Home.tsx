@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ShieldCheckIcon, LockClosedIcon, BuildingOfficeIcon, ServerIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline'
 import CTASection from '../components/CTASection'
+import AnimatedSection from '../components/AnimatedSection'
+import AnimatedElement from '../components/AnimatedElement'
+import { staggerContainer, staggerItem, cardHover } from '../utils/animations'
 
 const heroSlides = [
   {
@@ -269,56 +272,68 @@ export default function Home() {
       </div>
 
       {/* Latest News section */}
-      <div className="bg-gradient-tech mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 rounded-xl shadow-lg my-12">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-base font-semibold leading-7 text-primary-700">Latest Updates</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Stay informed with InfraGuard
-          </p>
-        </div>
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {latestNews.map((item) => (
+      <AnimatedSection className="bg-gradient-tech mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 rounded-xl shadow-lg my-12">
+        <AnimatedElement type="fadeUp">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-base font-semibold leading-7 text-primary-700">Latest Updates</h2>
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Stay informed with InfraGuard
+            </p>
+          </div>
+        </AnimatedElement>
+        
+        <motion.div 
+          className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {latestNews.map((item, index) => (
             <motion.article
               key={item.title}
               className="flex flex-col items-start card-shadow bg-white rounded-xl overflow-hidden"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              variants={staggerItem}
+              whileHover="hover"
+              initial="initial"
+              animate="initial"
+              custom={index}
             >
-              <div className="relative w-full">
-                <img
-                  src={item.image}
-                  alt=""
-                  className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                />
-              </div>
-              <div className="p-6 w-full">
-                <div className="flex items-center gap-x-4 text-xs">
-                  <time dateTime="2024-03" className="text-gray-500">
-                    March 2024
-                  </time>
+              <motion.div variants={cardHover} className="h-full w-full">
+                <div className="relative w-full">
+                  <img
+                    src={item.image}
+                    alt=""
+                    className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                  />
                 </div>
-                <div className="group relative">
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                    <Link to={item.link}>
-                      <span className="absolute inset-0" />
-                      {item.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-5 text-sm leading-6 text-gray-600">{item.description}</p>
+                <div className="p-6 w-full">
+                  <div className="flex items-center gap-x-4 text-xs">
+                    <time dateTime="2024-03" className="text-gray-500">
+                      March 2024
+                    </time>
+                  </div>
+                  <div className="group relative">
+                    <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+                      <Link to={item.link}>
+                        <span className="absolute inset-0" />
+                        {item.title}
+                      </Link>
+                    </h3>
+                    <p className="mt-5 text-sm leading-6 text-gray-600">{item.description}</p>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.article>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </AnimatedSection>
 
       {/* Features section */}
-      <div className="bg-circuit py-24 sm:py-32 relative">
+      <AnimatedSection className="bg-circuit py-24 sm:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/90"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center">
+          <AnimatedElement type="fadeUp" className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base font-semibold leading-7 text-gray-300">Comprehensive Security</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
               Everything you need to secure your business
@@ -326,18 +341,23 @@ export default function Home() {
             <p className="mt-6 text-lg leading-8 text-gray-300">
               We provide end-to-end security solutions that safeguard businesses in both the physical and digital worlds.
             </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+          </AnimatedElement>
+          
+          <motion.div 
+            className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-4">
-              {features.map((feature) => (
+              {features.map((feature, index) => (
                 <motion.div
                   key={feature.name}
                   className="flex flex-col glass-effect rounded-lg p-6 hover:bg-primary-800/50 transition-all cursor-pointer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
+                  variants={staggerItem}
                   whileHover={{ y: -5 }}
+                  custom={index}
                 >
                   <Link to={feature.link} className="flex flex-col h-full">
                     <dt className="flex items-center justify-center text-base font-semibold leading-7 text-white">
@@ -358,20 +378,22 @@ export default function Home() {
                 </motion.div>
               ))}
             </dl>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* Testimonials section */}
-      <div className="bg-tech-light mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 my-12 rounded-xl">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Trusted by leading businesses
-          </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-600">
-            Hear from our clients about how InfraGuard has transformed their security operations.
-          </p>
-        </div>
+      <AnimatedSection className="bg-tech-light mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 my-12 rounded-xl">
+        <AnimatedElement type="fadeUp">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Trusted by leading businesses
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Hear from our clients about how InfraGuard has transformed their security operations.
+            </p>
+          </div>
+        </AnimatedElement>
         
         <div className="relative mt-16">
           {/* Arrow Controls - Left */}
@@ -496,42 +518,47 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* Stats */}
-      <div className="bg-gradient-blue mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8 rounded-xl shadow-lg">
+      <AnimatedSection className="bg-gradient-blue mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8 rounded-xl shadow-lg">
         <div className="mx-auto max-w-2xl lg:max-w-none py-12">
-          <div className="text-center">
+          <AnimatedElement type="fadeUp" className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Trusted by businesses across Australia
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-600">
               Our track record speaks for itself with successful deployments and satisfied clients.
             </p>
-          </div>
-          <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
-            {stats.map((stat) => (
+          </AnimatedElement>
+          
+          <motion.dl 
+            className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4"
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {stats.map((stat, index) => (
               <motion.div
                 key={stat.name}
                 className="flex flex-col glass-effect p-8"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
+                variants={staggerItem}
+                custom={index}
               >
                 <dt className="text-sm font-semibold leading-6 text-gray-600">{stat.name}</dt>
                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
               </motion.div>
             ))}
-          </dl>
+          </motion.dl>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* Partners section */}
-      <div className="bg-dots py-24 sm:py-32">
+      <AnimatedSection className="bg-dots py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
-            <div className="text-center">
+            <AnimatedElement type="fadeUp" className="text-center">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Our Partners
               </h2>
@@ -539,8 +566,9 @@ export default function Home() {
               <p className="mt-6 text-lg leading-8 text-gray-600">
                 We collaborate with industry leaders to deliver the best security solutions
               </p>
-            </div>
-            <div className="relative mt-16 glass-effect rounded-xl p-4">
+            </AnimatedElement>
+            
+            <AnimatedElement type="fadeUp" delay={0.2} className="relative mt-16 glass-effect rounded-xl p-4">
               {/* Gradient masks for smooth edges */}
               <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-transparent z-10"></div>
               <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-transparent z-10"></div>
@@ -562,10 +590,10 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </div>
+            </AnimatedElement>
           </div>
         </div>
-      </div>
+      </AnimatedSection>
 
       {/* CTA section */}
       <CTASection 
