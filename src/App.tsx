@@ -13,6 +13,13 @@ import InfrastructureGuarding from './pages/services/InfrastructureGuarding'
 import ConstructionSiteSecurity from './pages/services/ConstructionSiteSecurity'
 import NetworkSecurity from './pages/services/NetworkSecurity'
 import AccessControl from './pages/services/AccessControl'
+import OnSiteSecurity from './pages/services/OnSiteSecurity'
+import RiskAssessment from './pages/services/RiskAssessment'
+import FirewallIntrusion from './pages/services/FirewallIntrusion'
+import EndpointProtection from './pages/services/EndpointProtection'
+import EmailSecurity from './pages/services/EmailSecurity'
+import VulnerabilityAssessment from './pages/services/VulnerabilityAssessment'
+import CybersecurityConsulting from './pages/services/CybersecurityConsulting'
 import Construction from './pages/industries/Construction'
 import Logistics from './pages/industries/Logistics'
 import Industrial from './pages/industries/Industrial'
@@ -37,6 +44,13 @@ function App() {
               <Route path="/services/construction-site-security" element={<ConstructionSiteSecurity />} />
               <Route path="/services/network-security" element={<NetworkSecurity />} />
               <Route path="/services/access-control" element={<AccessControl />} />
+              <Route path="/services/24-7-on-site-security" element={<OnSiteSecurity />} />
+              <Route path="/services/security-risk-assessment" element={<RiskAssessment />} />
+              <Route path="/services/firewall-intrusion-prevention" element={<FirewallIntrusion />} />
+              <Route path="/services/endpoint-protection" element={<EndpointProtection />} />
+              <Route path="/services/email-security" element={<EmailSecurity />} />
+              <Route path="/services/vulnerability-assessment" element={<VulnerabilityAssessment />} />
+              <Route path="/services/cybersecurity-consulting" element={<CybersecurityConsulting />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/industries/construction" element={<Construction />} />
               <Route path="/industries/logistics" element={<Logistics />} />
