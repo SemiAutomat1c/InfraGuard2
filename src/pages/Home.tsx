@@ -145,7 +145,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-tech-pattern">
       {/* Hero Carousel section */}
       <div className="relative isolate h-[100vh]">
         {heroSlides.map((slide, index) => (
@@ -225,7 +225,7 @@ export default function Home() {
       </div>
 
       {/* Latest News section */}
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="bg-gradient-tech mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 rounded-xl shadow-lg my-12">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-base font-semibold leading-7 text-primary-700">Latest Updates</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -236,7 +236,7 @@ export default function Home() {
           {latestNews.map((item) => (
             <motion.article
               key={item.title}
-              className="flex flex-col items-start"
+              className="flex flex-col items-start card-shadow bg-white rounded-xl overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -246,12 +246,11 @@ export default function Home() {
                 <img
                   src={item.image}
                   alt=""
-                  className="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                  className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
                 />
-                <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
               </div>
-              <div className="max-w-xl">
-                <div className="mt-8 flex items-center gap-x-4 text-xs">
+              <div className="p-6 w-full">
+                <div className="flex items-center gap-x-4 text-xs">
                   <time dateTime="2024-03" className="text-gray-500">
                     March 2024
                   </time>
@@ -272,8 +271,9 @@ export default function Home() {
       </div>
 
       {/* Features section */}
-      <div className="bg-primary-900 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="bg-circuit py-24 sm:py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/90"></div>
+        <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-base font-semibold leading-7 text-gray-300">Comprehensive Security</h2>
             <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -288,7 +288,7 @@ export default function Home() {
               {features.map((feature) => (
                 <motion.div
                   key={feature.name}
-                  className="flex flex-col bg-primary-800/30 rounded-lg p-6 hover:bg-primary-800/50 transition-all cursor-pointer"
+                  className="flex flex-col glass-effect rounded-lg p-6 hover:bg-primary-800/50 transition-all cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -297,13 +297,13 @@ export default function Home() {
                 >
                   <Link to={feature.link} className="flex flex-col h-full">
                     <dt className="flex items-center justify-center text-base font-semibold leading-7 text-white">
-                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary-700/50">
+                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary-700">
                         <feature.icon className="h-8 w-8 text-white" aria-hidden="true" />
                       </div>
                     </dt>
                     <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-center">
                       <h3 className="text-xl font-semibold text-white mb-2">{feature.name}</h3>
-                      <p className="flex-auto text-gray-300 mb-4">{feature.description}</p>
+                      <p className="flex-auto text-gray-200 mb-4">{feature.description}</p>
                       <p className="mt-auto">
                         <span className="text-sm font-semibold leading-6 text-gray-300 hover:text-white">
                           Learn more <span aria-hidden="true">→</span>
@@ -319,7 +319,7 @@ export default function Home() {
       </div>
 
       {/* Testimonials section */}
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="bg-tech-light mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 my-12 rounded-xl">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
             Trusted by leading businesses
@@ -332,7 +332,7 @@ export default function Home() {
           {testimonials.map((testimonial, index) => (
             <motion.figure
               key={index}
-              className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-gray-200"
+              className="glass-effect rounded-2xl p-8"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -353,8 +353,8 @@ export default function Home() {
       </div>
 
       {/* Stats */}
-      <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:max-w-none">
+      <div className="bg-gradient-blue mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8 rounded-xl shadow-lg">
+        <div className="mx-auto max-w-2xl lg:max-w-none py-12">
           <div className="text-center">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
               Trusted by businesses across Australia
@@ -367,7 +367,7 @@ export default function Home() {
             {stats.map((stat) => (
               <motion.div
                 key={stat.name}
-                className="flex flex-col bg-gray-100 p-8"
+                className="flex flex-col glass-effect p-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -382,7 +382,7 @@ export default function Home() {
       </div>
 
       {/* Partners section */}
-      <div className="bg-white py-24 sm:py-32">
+      <div className="bg-dots py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:max-w-none">
             <div className="text-center">
@@ -394,7 +394,7 @@ export default function Home() {
                 We collaborate with industry leaders to deliver the best security solutions
               </p>
             </div>
-            <div className="relative mt-16">
+            <div className="relative mt-16 glass-effect rounded-xl p-4">
               {/* Gradient masks for smooth edges */}
               <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-transparent z-10"></div>
               <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-transparent z-10"></div>

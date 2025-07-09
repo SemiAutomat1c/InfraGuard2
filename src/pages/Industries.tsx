@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import CTASection from '../components/CTASection'
 
 const industries = [
   {
@@ -36,7 +37,7 @@ const industries = [
 
 export default function Industries() {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-tech-pattern">
       {/* Hero section */}
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary-100/20 pt-16">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -63,7 +64,7 @@ export default function Industries() {
       </div>
 
       {/* Industries list section */}
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+      <div className="bg-gradient-tech mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 rounded-xl shadow-lg my-12">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">We serve a wide range of clients including:</h2>
           <div className="mt-10">
@@ -71,7 +72,7 @@ export default function Industries() {
               {industries.map((industry) => (
                 <motion.li 
                   key={industry.name}
-                  className="flex items-start"
+                  className="flex items-start glass-effect p-6 rounded-lg"
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -90,7 +91,7 @@ export default function Industries() {
       </div>
 
       {/* Industry cards section */}
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 bg-white lg:px-8">
+      <div className="bg-tech-light mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 rounded-xl">
         <div className="mx-auto max-w-2xl lg:mx-0">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Industry-Specific Security Solutions</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
@@ -108,7 +109,7 @@ export default function Industries() {
             {industries.map((industry) => (
               <motion.div
                 key={industry.name}
-                className="rounded-2xl bg-gray-50 p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="glass-effect rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
@@ -127,27 +128,7 @@ export default function Industries() {
       </div>
 
       {/* CTA section */}
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Ready to secure your business?
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
-            Contact us today to discuss how we can help protect your business with our comprehensive security solutions.
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link
-              to="/contact"
-              className="rounded-md bg-primary-800 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-800"
-            >
-              REQUEST A QUOTE
-            </Link>
-            <Link to="/services" className="text-sm font-semibold leading-6 text-gray-700">
-              View Our Services <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <CTASection />
     </div>
   )
 } 

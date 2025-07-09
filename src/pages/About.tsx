@@ -28,7 +28,7 @@ const values = [
 
 export default function About() {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-tech-pattern">
       {/* Hero section */}
       <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary-100/20 pt-16">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
@@ -56,8 +56,8 @@ export default function About() {
       </div>
 
       {/* Mission section */}
-      <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+      <div className="bg-gradient-tech mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8 rounded-xl shadow-lg">
+        <div className="mx-auto max-w-2xl lg:mx-0 py-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Mission</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             To provide integrated security services that protect people, property, and digital infrastructure. We aim to
@@ -78,14 +78,14 @@ export default function About() {
           {values.map((value) => (
             <motion.div
               key={value.name}
-              className="relative pl-9"
+              className="relative pl-9 glass-effect p-6 rounded-lg"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
               <dt className="inline font-semibold text-gray-900">
-                <value.icon className="absolute left-1 top-1 h-5 w-5 text-primary-700" aria-hidden="true" />
+                <value.icon className="absolute left-4 top-6 h-5 w-5 text-primary-700" aria-hidden="true" />
                 {value.name}
               </dt>{' '}
               <dd className="inline">{value.description}</dd>
@@ -95,15 +95,15 @@ export default function About() {
       </div>
 
       {/* Why Choose Us section */}
-      <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+      <div className="bg-tech-light mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8 rounded-xl">
+        <div className="mx-auto max-w-2xl lg:mx-0 py-12">
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Choose Us</h2>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             We stand out in the security industry through our commitment to excellence and comprehensive approach to
             security solutions.
           </p>
         </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none pb-12">
           <motion.dl
             className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3"
             initial={{ opacity: 0, y: 20 }}
@@ -111,7 +111,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex flex-col">
+            <div className="flex flex-col glass-effect p-6 rounded-lg">
               <dt className="text-base font-semibold leading-7 text-gray-900">Comprehensive Solutions</dt>
               <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
                 <p className="flex-auto">
@@ -120,7 +120,7 @@ export default function About() {
                 </p>
               </dd>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col glass-effect p-6 rounded-lg">
               <dt className="text-base font-semibold leading-7 text-gray-900">24/7 Availability</dt>
               <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
                 <p className="flex-auto">
@@ -129,7 +129,7 @@ export default function About() {
                 </p>
               </dd>
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col glass-effect p-6 rounded-lg">
               <dt className="text-base font-semibold leading-7 text-gray-900">Industry Compliance</dt>
               <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-600">
                 <p className="flex-auto">

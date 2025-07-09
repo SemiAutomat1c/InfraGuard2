@@ -24,10 +24,11 @@ export default function CTASection({
   darkBackground = false
 }: CTASectionProps) {
   return (
-    <div className={`w-full ${darkBackground ? 'bg-primary-900 text-white' : 'bg-white text-gray-900'}`}>
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+    <div className={`w-full ${darkBackground ? 'bg-circuit' : 'bg-tech-light'}`}>
+      <div className={`mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 ${darkBackground ? 'relative' : ''}`}>
+        {darkBackground && <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 to-primary-800/90"></div>}
         <motion.div
-          className="mx-auto max-w-2xl text-center"
+          className={`mx-auto max-w-2xl text-center relative z-10 ${!darkBackground ? 'glass-effect rounded-xl p-8' : ''}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
