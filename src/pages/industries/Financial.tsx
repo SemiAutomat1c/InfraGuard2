@@ -50,26 +50,45 @@ export default function Financial() {
   return (
     <div className="bg-gray-50">
       {/* Hero section */}
-      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary-100/20 pt-16">
+      <div className="relative pt-16">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-          <motion.div
-            className="mx-auto max-w-2xl lg:mx-0"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="flex items-center gap-x-4 text-xs mb-4">
-              <Link to="/industries" className="text-primary-700 hover:text-primary-600">
-                Industries
-              </Link>
-              <span className="text-gray-500">/</span>
-              <span className="text-gray-500">Financial Services</span>
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Financial Services Security</h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Comprehensive security solutions designed specifically for banks, credit unions, and financial institutions.
-            </p>
-          </motion.div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              className="mx-auto max-w-2xl lg:mx-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-x-4 text-xs mb-4">
+                <Link to="/industries" className="text-primary-700 hover:text-primary-600">
+                  Industries
+                </Link>
+                <span className="text-gray-500">/</span>
+                <span className="text-gray-500">Financial Services</span>
+              </div>
+              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Financial Services Security</h1>
+              <p className="mt-6 text-lg leading-8 text-gray-600">
+                Comprehensive security solutions designed specifically for banks, credit unions, and financial institutions.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="relative isolate overflow-hidden rounded-xl shadow-xl hidden lg:block"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-primary-100/20 to-black/50 z-10"></div>
+              <img 
+                src="/images/industries/financial.jpg" 
+                alt="Financial Services Security"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1565514020179-026b92b84bb6?q=80&w=2070';
+                }}
+              />
+            </motion.div>
+          </div>
         </div>
       </div>
 

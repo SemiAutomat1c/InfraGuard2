@@ -16,19 +16,19 @@ const heroSlides = [
   {
     title: "Complete Protection, Online and On-Site",
     description: "From physical guards to digital defenses — we secure your assets, infrastructure, and data with comprehensive security solutions tailored to your needs.",
-    image: "/images/hero-bg.svg",
+    image: "/images/hero/First-Hero-Slide.jpg",
     ctaLink: "/contact"
   },
   {
     title: "Advanced Security Solutions for Modern Businesses",
     description: "Our integrated approach combines physical security personnel with cutting-edge technology to provide complete protection for your business.",
-    image: "/images/hero-bg2.svg",
+    image: "/images/hero/Second-Hero-Slide.jpg",
     ctaLink: "/services"
   },
   {
     title: "Protecting What Matters Most",
     description: "With over a decade of experience, we deliver reliable security services that safeguard your most valuable assets and give you peace of mind.",
-    image: "/images/hero-bg3.svg",
+    image: "/images/hero/Third-Hero-Slide.jpg",
     ctaLink: "/about"
   }
 ]
@@ -64,7 +64,7 @@ const latestNews = [
   {
     title: 'Enhanced Security Solutions',
     description: 'Introducing our latest integrated security systems for modern businesses.',
-    image: '/images/news/enhanced-security.jpg',
+    image: '/images/news/enhanced-security.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
     date: 'March 2024',
     link: '/services',
@@ -72,7 +72,7 @@ const latestNews = [
   {
     title: 'Industry Recognition',
     description: 'InfraGuard named top security provider in the region.',
-    image: '/images/news/industry-recognition.jpg',
+    image: '/images/news/industry-recognition.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
     date: 'March 2024',
     link: '/about',
@@ -80,7 +80,7 @@ const latestNews = [
   {
     title: 'Security Best Practices',
     description: 'Latest guidelines for protecting your business assets.',
-    image: '/images/news/security-best-practices.jpg',
+    image: '/images/news/security-best-practices.jpeg',
     fallbackImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
     date: 'March 2024',
     link: '/services',
@@ -92,34 +92,34 @@ const testimonials = [
     text: "InfraGuard's integrated security approach has transformed how we protect our assets. Their professional team and cutting-edge solutions provide peace of mind.",
     author: "Sarah Chen",
     role: "Operations Director, TechCorp Industries",
-    image: "/images/testimonials/sarah-chen.jpg",
+    image: "/images/testimonials/sarah-chen.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
-    serviceImage: "/images/testimonials/security-service-1.jpg",
+    serviceImage: "/images/testimonials/security-service-1.jpeg",
     serviceFallbackImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "The combination of physical and cyber security services from InfraGuard has significantly enhanced our security posture. Their team's expertise is unmatched.",
     author: "Michael Roberts",
     role: "CEO, Construction Solutions",
-    image: "/images/testimonials/michael-roberts.jpg",
+    image: "/images/testimonials/micheal-roberts.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
-    serviceImage: "/images/testimonials/security-service-2.jpg",
+    serviceImage: "/public/images/testimonials/security-service-2.jpg",
     serviceFallbackImage: "https://images.unsplash.com/photo-1581092921461-eab10887abef?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "We've seen a dramatic reduction in security incidents since implementing InfraGuard's solutions. Their comprehensive approach addresses all our concerns.",
     author: "Jennifer Patel",
     role: "Security Director, Global Logistics",
-    image: "/images/testimonials/jennifer-lee.jpg",
+    image: "/images/testimonials/jennifer-lee.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
-    serviceImage: "/images/testimonials/security-service-3.jpg",
+    serviceImage: "/images/testimonials/security-service-3.jpeg",
     serviceFallbackImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "The peace of mind that comes with knowing our facilities are protected 24/7 is invaluable. InfraGuard delivers on their promises consistently.",
     author: "David Wilson",
     role: "Facility Manager, Nordex Manufacturing",
-    image: "/images/testimonials/david-wilson.jpg",
+    image: "/images/testimonials/david-wilson.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-4.jpg",
     serviceFallbackImage: "https://images.unsplash.com/photo-1594058573823-d8edf1ad3380?auto=format&fit=crop&w=800&q=80"
@@ -128,16 +128,16 @@ const testimonials = [
     text: "InfraGuard's cybersecurity team detected and prevented a potential breach that could have cost us millions. Their proactive approach is worth every penny.",
     author: "Maria Garcia",
     role: "CTO, Financial Services Inc.",
-    image: "/images/testimonials/maria-garcia.jpg",
+    image: "/images/testimonials/maria-garcia.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
-    serviceImage: "/images/testimonials/security-service-5.jpg",
+    serviceImage: "/images/testimonials/security-service-5.jpeg",
     serviceFallbackImage: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "The seamless integration between physical security personnel and digital systems gives us complete visibility and control over our security operations.",
     author: "Thomas Brown",
     role: "Operations VP, Tech Innovations",
-    image: "/images/testimonials/thomas-brown.jpg",
+    image: "/images/testimonials/thomas-brown.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-6.jpg",
     serviceFallbackImage: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=800&q=80"
@@ -154,55 +154,37 @@ const stats = [
 const partners = [
   {
     name: 'Qantas',
-    logo: '/images/partners/Qantas-Logo.wine.png',
+    logo: '/images/partner logos/Qantas-Logo.wine.png',
   },
   {
     name: 'Nordex',
-    logo: '/images/partners/Nordex-Logo.wine.png',
+    logo: '/images/partner logos/Nordex-Logo.wine.png',
   },
   {
     name: 'Nokia',
-    logo: '/images/partners/Nokia-Logo.wine.png',
+    logo: '/images/partner logos/Nokia-Logo.wine.png',
   },
   {
     name: 'CID Group',
-    logo: '/images/partners/CID-Group-white-logo.png',
+    logo: '/images/partner logos/CID-Group-white-logo.png',
   },
   {
     name: 'Verizon',
-    logo: '/images/partners/Verizon_Communications-Logo.wine.png',
+    logo: '/images/partner logos/Verizon_Communications-Logo.wine.png',
   },
   {
     name: 'SAP',
-    logo: '/images/partners/SAP_SE-Logo.wine.png',
+    logo: '/images/partner logos/SAP_SE-Logo.wine.png',
   },
   {
     name: 'Bosch',
-    logo: '/images/partners/Robert_Bosch_GmbH-Logo.wine.png',
+    logo: '/images/partner logos/Robert_Bosch_GmbH-Logo.wine.png',
   },
 ]
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentTestimonialSlide, setCurrentTestimonialSlide] = useState(0);
-  
-  // Auto-advance carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    
-    return () => clearInterval(interval);
-  }, []);
-
-  // Auto-advance testimonials carousel
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonialSlide((prev) => (prev + 1) % 6); // 6 slides total
-    }, 8000);
-    
-    return () => clearInterval(interval);
-  }, []);
   
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
@@ -235,7 +217,6 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-900 to-primary-800" />
                 <ImageWithFallback
                   src={slide.image}
-                  fallbackSrc="/images/hero-bg.svg"
                   alt=""
                   className="h-full w-full object-cover opacity-20"
                 />
@@ -350,7 +331,6 @@ export default function Home() {
                 <div className="relative w-full">
                   <ImageWithFallback
                     src={item.image}
-                    fallbackSrc={item.fallbackImage}
                     alt={item.title}
                     className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
                   />
@@ -499,7 +479,6 @@ export default function Home() {
                     >
                       <ImageWithFallback
                         src={testimonials[slideIndex].serviceImage}
-                        fallbackSrc={testimonials[slideIndex].serviceFallbackImage}
                         alt="Security service in action"
                         className="w-full h-64 object-cover"
                       />
@@ -521,7 +500,6 @@ export default function Home() {
                         <div className="h-12 w-12 rounded-full overflow-hidden">
                           <ImageWithFallback
                             src={testimonials[slideIndex].image}
-                            fallbackSrc={testimonials[slideIndex].fallbackImage}
                             alt={testimonials[slideIndex].author}
                             className="h-full w-full object-cover"
                           />

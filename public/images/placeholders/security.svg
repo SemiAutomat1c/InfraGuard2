@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1a365d"/>
+  <path d="M400 150 L550 250 L550 450 L400 550 L250 450 L250 250 Z" fill="#2c5282" stroke="#fff" stroke-width="8"/>
+  <path d="M400 200 L500 275 L500 425 L400 500 L300 425 L300 275 Z" fill="#1a365d" stroke="#fff" stroke-width="4"/>
+  <path d="M385 300 L415 300 L415 400 L385 400 Z" fill="#fff"/>
+  <circle cx="400" cy="275" r="25" fill="#fff"/>
+  <text x="400" y="570" font-family="Arial" font-size="24" text-anchor="middle" fill="#fff">Security Services</text>
+</svg> 

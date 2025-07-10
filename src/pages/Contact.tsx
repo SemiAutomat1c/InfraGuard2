@@ -94,7 +94,6 @@ export default function Contact() {
             >
               <ImageWithFallback
                 src="/images/contact/contact-hero.jpg"
-                fallbackSrc="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80"
                 alt="InfraGuard Contact Center"
                 className="w-full h-full object-cover"
               />
@@ -331,7 +330,6 @@ export default function Contact() {
                   <div className="h-60 overflow-hidden">
                     <ImageWithFallback
                       src={office.image}
-                      fallbackSrc={office.fallbackImage}
                       alt={office.name}
                       className="w-full h-full object-cover"
                     />

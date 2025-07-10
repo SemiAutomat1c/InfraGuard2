@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#4a5568"/>
+  <rect x="150" y="100" width="500" height="400" fill="#2d3748" stroke="#fff" stroke-width="4" rx="20" ry="20"/>
+  
+  <!-- Image icon -->
+  <rect x="300" y="200" width="200" height="150" fill="none" stroke="#fff" stroke-width="8" rx="10" ry="10"/>
+  <circle cx="350" cy="250" r="20" fill="#fff"/>
+  <polygon points="275,350 375,280 425,320 525,220" fill="none" stroke="#fff" stroke-width="8"/>
+  
+  <text x="400" y="420" font-family="Arial" font-size="24" text-anchor="middle" fill="#fff">Image Unavailable</text>
+</svg> 

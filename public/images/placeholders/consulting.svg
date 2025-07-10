@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#1a4971"/>
+  
+  <!-- Document and chart -->
+  <rect x="250" y="150" width="300" height="350" fill="#fff" stroke="#000" stroke-width="2"/>
+  
+  <!-- Chart lines -->
+  <line x1="300" y1="400" x2="300" y2="250" stroke="#000" stroke-width="2"/>
+  <line x1="300" y1="400" x2="500" y2="400" stroke="#000" stroke-width="2"/>
+  
+  <!-- Chart bars -->
+  <rect x="320" y="350" width="30" height="50" fill="#3182ce"/>
+  <rect x="370" y="320" width="30" height="80" fill="#3182ce"/>
+  <rect x="420" y="280" width="30" height="120" fill="#3182ce"/>
+  <rect x="470" y="300" width="30" height="100" fill="#3182ce"/>
+  
+  <!-- Clipboard elements -->
+  <rect x="280" y="180" width="240" height="40" fill="#e2e8f0"/>
+  <rect x="280" y="230" width="120" height="10" fill="#e2e8f0"/>
+  <rect x="280" y="450" width="240" height="20" fill="#e2e8f0"/>
+  
+  <!-- Pencil -->
+  <polygon points="550,200 570,180 590,200 570,220" fill="#ed8936" stroke="#000" stroke-width="1"/>
+  <line x1="590" y1="200" x2="620" y2="230" stroke="#000" stroke-width="2"/>
+  <polygon points="620,230 630,240 625,225" fill="#000"/>
+  
+  <text x="400" y="570" font-family="Arial" font-size="24" text-anchor="middle" fill="#fff">Consulting Services</text>
+</svg> 
