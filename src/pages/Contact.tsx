@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import SectionDivider from '../components/SectionDivider'
 import AnimatedSection from '../components/AnimatedSection'
 import AnimatedElement from '../components/AnimatedElement'
+import ImageWithFallback from '../components/ImageWithFallback'
 
 const offices = [
   {
@@ -91,13 +92,11 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img 
-                src="/images/contact/contact-hero.jpg" 
-                alt="InfraGuard Contact Center" 
+              <ImageWithFallback
+                src="/images/contact/contact-hero.jpg"
+                fallbackSrc="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80"
+                alt="InfraGuard Contact Center"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=800&q=80';
-                }}
               />
           </motion.div>
           </div>
@@ -330,13 +329,11 @@ export default function Contact() {
                   className="bg-white rounded-xl overflow-hidden shadow-lg"
                 >
                   <div className="h-60 overflow-hidden">
-                    <img 
-                      src={office.image} 
-                      alt={office.name} 
+                    <ImageWithFallback
+                      src={office.image}
+                      fallbackSrc={office.fallbackImage}
+                      alt={office.name}
                       className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.currentTarget.src = office.fallbackImage;
-                      }}
                     />
                   </div>
                   <div className="p-8">

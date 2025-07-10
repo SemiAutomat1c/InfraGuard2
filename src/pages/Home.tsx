@@ -9,6 +9,7 @@ import SectionDivider from '../components/SectionDivider'
 import AnimatedCounter from '../components/AnimatedCounter'
 import FloatingBadge from '../components/FloatingBadge'
 import WhyChooseUs from '../components/WhyChooseUs'
+import ImageWithFallback from '../components/ImageWithFallback'
 import { staggerContainer, staggerItem, cardHover } from '../utils/animations'
 
 const heroSlides = [
@@ -230,14 +231,15 @@ export default function Home() {
               currentSlide === index ? 'opacity-100 z-10' : 'opacity-0 z-0'
             }`}
           >
-            <div className="absolute inset-0 -z-10 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-900 to-primary-800" />
-              <img
-                src={slide.image}
-                alt=""
-                className="h-full w-full object-cover opacity-20"
-              />
-            </div>
+                          <div className="absolute inset-0 -z-10 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-900 to-primary-800" />
+                <ImageWithFallback
+                  src={slide.image}
+                  fallbackSrc="/images/hero-bg.svg"
+                  alt=""
+                  className="h-full w-full object-cover opacity-20"
+                />
+              </div>
             <div className="relative mx-auto h-full max-w-7xl px-6 flex items-center">
               <motion.div
                 className="mx-auto max-w-2xl lg:mx-0 pt-16"
@@ -346,13 +348,11 @@ export default function Home() {
             >
               <motion.div variants={cardHover} className="h-full w-full flex flex-col">
                 <div className="relative w-full">
-                  <img
+                  <ImageWithFallback
                     src={item.image}
+                    fallbackSrc={item.fallbackImage}
                     alt={item.title}
                     className="aspect-[16/9] w-full bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                    onError={(e) => {
-                      e.currentTarget.src = item.fallbackImage;
-                    }}
                   />
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
@@ -497,29 +497,12 @@ export default function Home() {
                       animate={currentTestimonialSlide === slideIndex ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
                       transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                      <div className="relative h-80">
-                        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/70 to-transparent z-10 flex items-end justify-start p-6">
-                          <div className="flex items-center gap-x-2">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white">
-                              {slideIndex % 2 === 0 ? 
-                                <ShieldCheckIcon className="h-5 w-5" /> : 
-                                <LockClosedIcon className="h-5 w-5" />
-                              }
-                            </div>
-                            <span className="text-xl font-semibold text-white">
-                              {slideIndex % 2 === 0 ? 'Security services' : 'Security solutions'}
-                            </span>
-                          </div>
-                        </div>
-                        <img 
-                          src={testimonials[slideIndex].serviceImage} 
-                          alt={slideIndex % 2 === 0 ? "Security services" : "Security solutions"}
-                          className="h-full w-full object-cover"
-                          onError={(e) => {
-                            e.currentTarget.src = testimonials[slideIndex].serviceFallbackImage;
-                          }}
-                        />
-                      </div>
+                      <ImageWithFallback
+                        src={testimonials[slideIndex].serviceImage}
+                        fallbackSrc={testimonials[slideIndex].serviceFallbackImage}
+                        alt="Security service in action"
+                        className="w-full h-64 object-cover"
+                      />
                     </motion.div>
                   </div>
                   
@@ -535,14 +518,12 @@ export default function Home() {
                         <p className="text-lg">{`"${testimonials[slideIndex].text}"`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
-                        <div className="h-12 w-12 rounded-full overflow-hidden bg-gray-200">
-                          <img 
-                            src={testimonials[slideIndex].image} 
+                        <div className="h-12 w-12 rounded-full overflow-hidden">
+                          <ImageWithFallback
+                            src={testimonials[slideIndex].image}
+                            fallbackSrc={testimonials[slideIndex].fallbackImage}
                             alt={testimonials[slideIndex].author}
                             className="h-full w-full object-cover"
-                            onError={(e) => {
-                              e.currentTarget.src = testimonials[slideIndex].fallbackImage;
-                            }}
                           />
                         </div>
                         <div>

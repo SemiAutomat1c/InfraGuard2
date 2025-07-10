@@ -17,6 +17,7 @@ import CTASection from '../components/CTASection'
 import SectionDivider from '../components/SectionDivider'
 import AnimatedSection from '../components/AnimatedSection'
 import AnimatedElement from '../components/AnimatedElement'
+import ImageWithFallback from '../components/ImageWithFallback'
 
 const physicalServices = [
   {
@@ -168,13 +169,11 @@ export default function Services() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img 
-                src="/images/services-hero.jpg" 
-                alt="InfraGuard Security Services" 
+              <ImageWithFallback
+                src="/images/services-hero.jpg"
+                fallbackSrc="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
+                alt="InfraGuard Security Services"
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80';
-                }}
               />
             </motion.div>
           </div>
@@ -215,13 +214,11 @@ export default function Services() {
                   {/* Service card with image */}
                   {(index === 1 || index === 2 || index === 4) ? (
                     <div className="h-48 overflow-hidden">
-                      <img 
-                        src={service.fallbackImage} 
+                      <ImageWithFallback
+                        src={service.image}
+                        fallbackSrc={service.fallbackImage}
                         alt={service.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                          e.currentTarget.src = service.fallbackImage;
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-4">
@@ -303,13 +300,11 @@ export default function Services() {
                     </div>
                   ) : (
                     <div className="h-48 overflow-hidden">
-                      <img 
-                        src={service.fallbackImage} 
+                      <ImageWithFallback
+                        src={service.image}
+                        fallbackSrc={service.fallbackImage}
                         alt={service.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                          e.currentTarget.src = service.fallbackImage;
-                        }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-4">
