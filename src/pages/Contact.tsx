@@ -96,7 +96,7 @@ export default function Contact() {
                 alt="InfraGuard Contact Center" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?q=80&w=2070';
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069';
                 }}
               />
             </motion.div>
