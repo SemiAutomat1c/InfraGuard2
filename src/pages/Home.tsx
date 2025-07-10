@@ -64,7 +64,7 @@ const latestNews = [
     title: 'Enhanced Security Solutions',
     description: 'Introducing our latest integrated security systems for modern businesses.',
     image: '/images/news/enhanced-security.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=2070',
+    fallbackImage: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
     date: 'March 2024',
     link: '/services',
   },
@@ -72,7 +72,7 @@ const latestNews = [
     title: 'Industry Recognition',
     description: 'InfraGuard named top security provider in the region.',
     image: '/images/news/industry-recognition.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=2070',
+    fallbackImage: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80',
     date: 'March 2024',
     link: '/about',
   },
@@ -80,7 +80,7 @@ const latestNews = [
     title: 'Security Best Practices',
     description: 'Latest guidelines for protecting your business assets.',
     image: '/images/news/security-best-practices.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070',
+    fallbackImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
     date: 'March 2024',
     link: '/services',
   },
@@ -92,54 +92,54 @@ const testimonials = [
     author: "Sarah Chen",
     role: "Operations Director, TechCorp Industries",
     image: "/images/testimonials/sarah-chen.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976",
+    fallbackImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-1.jpg",
-    serviceFallbackImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070"
+    serviceFallbackImage: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "The combination of physical and cyber security services from InfraGuard has significantly enhanced our security posture. Their team's expertise is unmatched.",
     author: "Michael Roberts",
     role: "CEO, Construction Solutions",
     image: "/images/testimonials/michael-roberts.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974",
+    fallbackImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-2.jpg",
-    serviceFallbackImage: "https://images.unsplash.com/photo-1581092921461-eab10887abef?q=80&w=2070"
+    serviceFallbackImage: "https://images.unsplash.com/photo-1581092921461-eab10887abef?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "We've seen a dramatic reduction in security incidents since implementing InfraGuard's solutions. Their comprehensive approach addresses all our concerns.",
     author: "Jennifer Patel",
     role: "Security Director, Global Logistics",
     image: "/images/testimonials/jennifer-lee.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961",
+    fallbackImage: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-3.jpg",
-    serviceFallbackImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072"
+    serviceFallbackImage: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "The peace of mind that comes with knowing our facilities are protected 24/7 is invaluable. InfraGuard delivers on their promises consistently.",
     author: "David Wilson",
     role: "Facility Manager, Nordex Manufacturing",
     image: "/images/testimonials/david-wilson.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070",
+    fallbackImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-4.jpg",
-    serviceFallbackImage: "https://images.unsplash.com/photo-1594058573823-d8edf1ad3380?q=80&w=2071"
+    serviceFallbackImage: "https://images.unsplash.com/photo-1594058573823-d8edf1ad3380?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "InfraGuard's cybersecurity team detected and prevented a potential breach that could have cost us millions. Their proactive approach is worth every penny.",
     author: "Maria Garcia",
     role: "CTO, Financial Services Inc.",
     image: "/images/testimonials/maria-garcia.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974",
+    fallbackImage: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-5.jpg",
-    serviceFallbackImage: "https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069"
+    serviceFallbackImage: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80"
   },
   {
     text: "The seamless integration between physical security personnel and digital systems gives us complete visibility and control over our security operations.",
     author: "Thomas Brown",
     role: "Operations VP, Tech Innovations",
     image: "/images/testimonials/thomas-brown.jpg",
-    fallbackImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974",
+    fallbackImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
     serviceImage: "/images/testimonials/security-service-6.jpg",
-    serviceFallbackImage: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?q=80&w=2080"
+    serviceFallbackImage: "https://images.unsplash.com/photo-1517433367423-c7e5b0f35086?auto=format&fit=crop&w=800&q=80"
   }
 ]
 
@@ -274,7 +274,7 @@ export default function Home() {
             />
             <FloatingBadge 
               text="24/7 Monitoring" 
-              className="bottom-1/4 left-[15%]"
+              className="bottom-[15%] left-[15%]"
               delay={1.2}
             />
           </div>

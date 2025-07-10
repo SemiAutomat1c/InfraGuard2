@@ -26,7 +26,7 @@ const physicalServices = [
     icon: BuildingOfficeIcon,
     href: '/services/infrastructure-guarding',
     image: '/images/services/infrastructure-guarding.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1577962146641-43da4175dcbe?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1577962146641-43da4175dcbe?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Construction Site Security',
@@ -35,7 +35,7 @@ const physicalServices = [
     icon: ShieldCheckIcon,
     href: '/services/construction-site-security',
     image: '/images/services/construction-security.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: '24/7 On-Site Security',
@@ -43,7 +43,7 @@ const physicalServices = [
     icon: ClockIcon,
     href: '/services#physical',
     image: '/images/services/onsite-security.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1541746972996-4e0b0f43e02a?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Access Control',
@@ -51,7 +51,7 @@ const physicalServices = [
     icon: KeyIcon,
     href: '/services/access-control',
     image: '/images/services/access-control.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1622037022824-0c71d749ba6a?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1622037022824-0c71d749ba6a?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Security Risk Assessment',
@@ -59,7 +59,7 @@ const physicalServices = [
     icon: DocumentMagnifyingGlassIcon,
     href: '/services#physical',
     image: '/images/services/risk-assessment.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'
   },
 ]
 
@@ -70,7 +70,7 @@ const cyberServices = [
     icon: ServerIcon,
     href: '/services/network-security',
     image: '/images/services/network-security.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Firewall & Intrusion Prevention',
@@ -78,7 +78,7 @@ const cyberServices = [
     icon: LockClosedIcon,
     href: '/services#cyber',
     image: '/images/services/firewall.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Endpoint Protection',
@@ -86,7 +86,7 @@ const cyberServices = [
     icon: DevicePhoneMobileIcon,
     href: '/services#cyber',
     image: '/images/services/endpoint-protection.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Email Security',
@@ -94,7 +94,7 @@ const cyberServices = [
     icon: EnvelopeIcon,
     href: '/services#cyber',
     image: '/images/services/email-security.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=2069'
+    fallbackImage: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Vulnerability Assessment',
@@ -102,7 +102,7 @@ const cyberServices = [
     icon: ShieldExclamationIcon,
     href: '/services#cyber',
     image: '/images/services/vulnerability.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80'
   },
   {
     name: 'Cybersecurity Consulting',
@@ -110,7 +110,7 @@ const cyberServices = [
     icon: UserGroupIcon,
     href: '/services#cyber',
     image: '/images/services/consulting.jpg',
-    fallbackImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070'
+    fallbackImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80'
   },
 ]
 
@@ -173,7 +173,7 @@ export default function Services() {
                 alt="InfraGuard Security Services" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070';
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80';
                 }}
               />
             </motion.div>
@@ -212,20 +212,31 @@ export default function Services() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={service.image} 
-                      alt={service.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.currentTarget.src = service.fallbackImage;
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                  {/* Service card with image */}
+                  {(index === 1 || index === 2 || index === 4) ? (
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={service.fallbackImage} 
+                        alt={service.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          e.currentTarget.src = service.fallbackImage;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    /* Service card with gradient background for left side cards */
+                    <div className="h-48 overflow-hidden bg-gradient-to-r from-primary-100 to-primary-50 flex items-center justify-start p-6">
+                      <div>
+                        <h3 className="text-xl font-bold text-primary-900 mb-2">{service.name}</h3>
+                        <div className="w-16 h-1 bg-primary-700 rounded-full"></div>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-4">
@@ -282,20 +293,30 @@ export default function Services() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <div className="h-48 overflow-hidden">
-                    <img 
-                      src={service.image} 
-                      alt={service.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.currentTarget.src = service.fallbackImage;
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
-                      <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                  {/* Service card with image or gradient based on index */}
+                  {(index % 2 === 0) ? (
+                    <div className="h-48 overflow-hidden bg-gradient-to-r from-secondary-100 to-secondary-50 flex items-center justify-start p-6">
+                      <div>
+                        <h3 className="text-xl font-bold text-secondary-900 mb-2">{service.name}</h3>
+                        <div className="w-16 h-1 bg-secondary-700 rounded-full"></div>
+                      </div>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="h-48 overflow-hidden">
+                      <img 
+                        src={service.fallbackImage} 
+                        alt={service.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        onError={(e) => {
+                          e.currentTarget.src = service.fallbackImage;
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="p-6">
                     <div className="flex items-center gap-3 mb-4">
