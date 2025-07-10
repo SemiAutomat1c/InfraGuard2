@@ -104,7 +104,7 @@ export default function Industries() {
   return (
     <div className="bg-tech-pattern">
       {/* Hero section */}
-      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary-100/20 pt-16">
+      <div className="relative pt-16">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -235,7 +235,7 @@ export default function Industries() {
                 delay={index * 0.1}
               >
                 <div className="group relative bg-white rounded-2xl shadow-lg overflow-hidden">
-                  <div className="h-64 overflow-hidden">
+                  <div className="h-[32rem] overflow-hidden relative">
                     <img 
                       src={industry.image} 
                       alt={industry.name}
@@ -244,35 +244,30 @@ export default function Industries() {
                         e.currentTarget.src = industry.fallbackImage;
                       }}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <div className="flex items-center gap-3">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 text-white">
+                    <div className="absolute inset-x-0 bottom-0 bg-white/95 backdrop-blur p-4">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-700 text-white flex-shrink-0">
                           <industry.icon className="h-5 w-5" />
                         </div>
-                        <h3 className="text-xl font-bold text-white">{industry.name}</h3>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-primary-700 line-clamp-1">{industry.name}</h3>
+                          <p className="text-sm text-gray-700 line-clamp-1">{industry.description}</p>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <p className="text-gray-600 mb-6">{industry.description}</p>
-                    <div className="mb-6">
-                      <ul className="space-y-3">
+                      <div className="flex flex-wrap gap-1.5 mb-2">
                         {industry.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center gap-3">
-                            <div className="flex-shrink-0 h-1.5 w-1.5 rounded-full bg-primary-700"></div>
-                            <span className="text-sm text-gray-600">{feature}</span>
-                          </li>
+                          <span key={idx} className="inline-flex items-center rounded-full bg-primary-50 px-2.5 py-1 text-xs font-semibold text-primary-700">
+                            {feature}
+                          </span>
                         ))}
-                      </ul>
+                      </div>
+                      <Link 
+                        to={industry.href} 
+                        className="inline-flex items-center rounded-md bg-primary-700 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-600 transition-colors"
+                      >
+                        View Solutions
+                      </Link>
                     </div>
-                    <Link 
-                      to={industry.href} 
-                      className="inline-flex items-center rounded-md bg-primary-700 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-primary-600"
-                    >
-                      View Solutions
-                    </Link>
                   </div>
                 </div>
               </AnimatedElement>

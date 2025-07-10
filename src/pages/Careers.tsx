@@ -13,6 +13,7 @@ import SectionDivider from '../components/SectionDivider'
 import AnimatedSection from '../components/AnimatedSection'
 import AnimatedElement from '../components/AnimatedElement'
 import CTASection from '../components/CTASection'
+import ImageWithFallback from '../components/ImageWithFallback'
 
 const openPositions = [
   {
@@ -124,7 +125,7 @@ export default function Careers() {
   return (
     <div className="bg-tech-pattern">
       {/* Hero section */}
-      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary-100/20 pt-16">
+      <div className="relative pt-16">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -162,13 +163,10 @@ export default function Careers() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img 
+              <ImageWithFallback 
                 src="/images/careers/team-hero.jpg" 
                 alt="InfraGuard Security Team" 
                 className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070';
-                }}
               />
             </motion.div>
           </div>
@@ -222,13 +220,10 @@ export default function Careers() {
               transition={{ duration: 0.8 }}
             >
               <div className="aspect-[3/2] overflow-hidden rounded-lg shadow-lg">
-                <img
+                <ImageWithFallback
                   src="/images/careers/team-culture.jpg"
                   alt="Team members at InfraGuard"
                   className="h-full w-full object-cover"
-                  onError={(e) => {
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070';
-                  }}
                 />
               </div>
             </motion.div>
@@ -284,34 +279,34 @@ export default function Careers() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <div className="h-48 overflow-hidden relative">
-                      <img 
+                    <div className="h-48 overflow-hidden">
+                      <ImageWithFallback 
                         src={position.image} 
                         alt={position.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        onError={(e) => {
-                          e.currentTarget.src = position.fallbackImage;
-                        }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <h3 className="text-xl font-bold text-white">{position.title}</h3>
-                        <div className="flex items-center gap-x-4 mt-1">
-                          <span className="text-sm text-white/90">{position.location}</span>
-                          <span className="text-sm text-white/90">•</span>
-                          <span className="text-sm text-white/90">{position.type}</span>
-                        </div>
-                      </div>
                     </div>
                     
-                    <div className="p-6">
-                      <div className="flex justify-between items-start mb-4">
-                        <span className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs font-medium ${position.category === 'guard' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}`}>
-                          {position.category === 'guard' ? 'Security' : 'IT'}
-                        </span>
+                    <div className="p-6 bg-white">
+                      <div className="flex items-start gap-4 mb-4">
+                        <div className="flex flex-col items-center gap-1">
+                          <div className={`flex h-10 w-10 items-center justify-center rounded-full ${position.category === 'guard' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'}`}>
+                            <span className="font-semibold">{index + 1}</span>
+                          </div>
+                          <span className={`text-xs font-medium ${position.category === 'guard' ? 'text-blue-800' : 'text-green-800'}`}>
+                            {position.category === 'guard' ? 'Security' : 'IT'}
+                          </span>
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-gray-900 mb-1">{position.title}</h3>
+                          <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                            <span>{position.location}</span>
+                            <span>•</span>
+                            <span>{position.type}</span>
+                          </div>
+                          <p className="text-gray-600 line-clamp-2">{position.description}</p>
+                        </div>
                       </div>
-                      
-                      <p className="text-gray-600 mb-6">{position.description}</p>
                       
                       <button
                         onClick={() => {
@@ -347,13 +342,10 @@ export default function Careers() {
                 </p>
                 
                 <div className="mt-10 aspect-video overflow-hidden rounded-lg shadow-lg">
-                  <img
+                  <ImageWithFallback
                     src="/images/careers/apply-now.jpg"
                     alt="Join our team at InfraGuard"
-                    className="h-full w-full object-cover"
-                    onError={(e) => {
-                      e.currentTarget.src = 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?q=80&w=2070';
-                    }}
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 

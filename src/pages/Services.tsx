@@ -128,7 +128,7 @@ export default function Services() {
   return (
     <div className="bg-tech-pattern">
       {/* Hero section */}
-      <div className="relative isolate overflow-hidden bg-gradient-to-b from-primary-100/20 pt-16">
+      <div className="relative pt-16">
         <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -170,9 +170,8 @@ export default function Services() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <ImageWithFallback
-                src="/images/services-hero.jpg"
-                fallbackSrc="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=800&q=80"
-                alt="InfraGuard Security Services"
+                src="/images/wmremove-transformed.jpeg"
+                alt="InfraGuard Security Services - Customer Support"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -216,34 +215,28 @@ export default function Services() {
                     <div className="h-48 overflow-hidden">
                       <ImageWithFallback
                         src={service.image}
-                        fallbackSrc={service.fallbackImage}
                         alt={service.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <h3 className="text-xl font-bold text-white">{service.name}</h3>
-                      </div>
                     </div>
                   ) : (
                     /* Service card with gradient background for left side cards */
-                    <div className="h-48 overflow-hidden bg-gradient-to-r from-primary-100 to-primary-50 flex items-center justify-start p-6">
-                      <div>
-                        <h3 className="text-xl font-bold text-primary-900 mb-2">{service.name}</h3>
-                        <div className="w-16 h-1 bg-primary-700 rounded-full"></div>
-                      </div>
-                    </div>
+                    <div className="h-48 overflow-hidden bg-gradient-to-r from-primary-100 to-primary-50"></div>
                   )}
                   
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
-                        <service.icon className="h-6 w-6 text-primary-700" aria-hidden="true" />
+                  <div className="p-6 bg-white">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="flex flex-col items-center gap-1">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
+                          <service.icon className="h-6 w-6 text-primary-700" aria-hidden="true" />
+                        </div>
+                        <span className="text-primary-700 font-semibold">{index + 1}</span>
                       </div>
-                      <span className="text-primary-700 font-bold">{index + 1}</span>
+                      <div>
+                        <h3 className="text-xl font-bold text-primary-900 mb-2">{service.name}</h3>
+                        <p className="text-gray-600 line-clamp-2">{service.description}</p>
+                      </div>
                     </div>
-                    
-                    <p className="text-gray-600 mb-6">{service.description}</p>
                     
                     <Link 
                       to={service.href} 
@@ -292,36 +285,30 @@ export default function Services() {
                 >
                   {/* Service card with image or gradient based on index */}
                   {(index % 2 === 0) ? (
-                    <div className="h-48 overflow-hidden bg-gradient-to-r from-secondary-100 to-secondary-50 flex items-center justify-start p-6">
-                      <div>
-                        <h3 className="text-xl font-bold text-secondary-900 mb-2">{service.name}</h3>
-                        <div className="w-16 h-1 bg-secondary-700 rounded-full"></div>
-                      </div>
-                    </div>
+                    <div className="h-48 overflow-hidden bg-gradient-to-r from-secondary-100 to-secondary-50"></div>
                   ) : (
                     <div className="h-48 overflow-hidden">
                       <ImageWithFallback
                         src={service.image}
-                        fallbackSrc={service.fallbackImage}
                         alt={service.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                      <div className="absolute bottom-0 left-0 right-0 p-4">
-                        <h3 className="text-xl font-bold text-white">{service.name}</h3>
-                      </div>
                     </div>
                   )}
                   
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
-                        <service.icon className="h-6 w-6 text-primary-700" aria-hidden="true" />
+                  <div className="p-6 bg-white">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="flex flex-col items-center gap-1">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
+                          <service.icon className="h-6 w-6 text-primary-700" aria-hidden="true" />
+                        </div>
+                        <span className="text-primary-700 font-semibold">{index + 1}</span>
                       </div>
-                      <span className="text-primary-700 font-bold">{index + 1}</span>
+                      <div>
+                        <h3 className="text-xl font-bold text-primary-900 mb-2">{service.name}</h3>
+                        <p className="text-gray-600 line-clamp-2">{service.description}</p>
+                      </div>
                     </div>
-                    
-                    <p className="text-gray-600 mb-6">{service.description}</p>
                     
                     <Link 
                       to={service.href} 
