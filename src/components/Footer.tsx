@@ -76,10 +76,15 @@ export default function Footer() {
           <div className="space-y-8">
             <Link 
               to="/" 
-              className="text-2xl font-bold text-white"
+              className="flex flex-col"
               onClick={(e) => handleNavigation(e, '/')}
             >
-              InfraGuard
+              <span className="text-2xl font-bold leading-none text-white">
+                InfraGuard
+              </span>
+              <span className="text-xs font-medium text-gray-300">
+                Technologies
+              </span>
             </Link>
             <p className="text-sm leading-6 text-gray-300">
               Providing comprehensive security solutions to protect your assets, infrastructure, and data.
