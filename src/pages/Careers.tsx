@@ -279,11 +279,11 @@ export default function Careers() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <div className="h-48 overflow-hidden">
+                    <div className="h-64 overflow-hidden">
                       <ImageWithFallback 
                         src={position.image} 
                         alt={position.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     
@@ -343,7 +343,7 @@ export default function Careers() {
                 
                 <div className="mt-10 aspect-video overflow-hidden rounded-lg shadow-lg">
                   <ImageWithFallback
-                    src="/images/careers/apply-now.jpg"
+                    src="/images/careers/Apply now.png"
                     alt="Join our team at InfraGuard"
                     className="w-full h-full object-cover"
                   />

@@ -211,18 +211,13 @@ export default function Services() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* Service card with image */}
-                  {(index === 1 || index === 2 || index === 4) ? (
-                    <div className="h-48 overflow-hidden">
-                      <ImageWithFallback
-                        src={service.image}
-                        alt={service.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ) : (
-                    /* Service card with gradient background for left side cards */
-                    <div className="h-48 overflow-hidden bg-gradient-to-r from-primary-100 to-primary-50"></div>
-                  )}
+                  <div className="h-48 overflow-hidden">
+                    <ImageWithFallback
+                      src={service.image}
+                      alt={service.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                   
                   <div className="p-6 bg-white">
                     <div className="flex items-start gap-4 mb-4">
@@ -283,18 +278,14 @@ export default function Services() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  {/* Service card with image or gradient based on index */}
-                  {(index % 2 === 0) ? (
-                    <div className="h-48 overflow-hidden bg-gradient-to-r from-secondary-100 to-secondary-50"></div>
-                  ) : (
-                    <div className="h-48 overflow-hidden">
-                      <ImageWithFallback
-                        src={service.image}
-                        alt={service.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  )}
+                  {/* Service card with image */}
+                  <div className="h-48 overflow-hidden">
+                    <ImageWithFallback
+                      src={service.image}
+                      alt={service.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
                   
                   <div className="p-6 bg-white">
                     <div className="flex items-start gap-4 mb-4">
