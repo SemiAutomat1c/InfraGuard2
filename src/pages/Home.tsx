@@ -103,7 +103,7 @@ const testimonials = [
     role: "CEO, Construction Solutions",
     image: "/images/testimonials/micheal-roberts.jpeg",
     fallbackImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80",
-    serviceImage: "/public/images/testimonials/security-service-2.jpg",
+    serviceImage: "/images/testimonials/security-service-2.jpg",
     serviceFallbackImage: "https://images.unsplash.com/photo-1581092921461-eab10887abef?auto=format&fit=crop&w=800&q=80"
   },
   {
